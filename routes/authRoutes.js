@@ -18,8 +18,6 @@ router.post("/process-signup", (req, res, next) => {
   const { fullName, nickName, email, password} = req.body;
 
   if(password === "" || password.match(/[0-9]/) === null ){
-    //req.flash("TYPE", "MESSAGE") => c'est tjrs type et message
-    // req.flash("error", "Your password must have at least a number");
     res.redirect("/signup");
     return;
   }
@@ -29,7 +27,6 @@ router.post("/process-signup", (req, res, next) => {
 
   User.create({fullName, nickName, email, encryptedPassword})
     .then(()=>{
-      req.flash("succes", "You have signed-up - try loggin-in");
       res.redirect("/");
     })
     .catch((err) => {
