@@ -11,6 +11,7 @@ const path         = require('path');
 const session        = require('express-session');
 const MongoStore     = require('connect-mongo')(session); 
 const passportSetup  = require('./passport/setup');
+const flash = require('flash');
 
 
 mongoose.Promise = Promise;

@@ -2,6 +2,7 @@ const passport = require('passport');
 const express  = require('express');
 const bcrypt   = require('bcryptjs'); 
 const User     = require('../models/userModel');
+const flash = require('flash');
 const router   = express.Router();
 
 
@@ -84,9 +85,7 @@ router.get("/google/login",
 router.get("/google/success", 
   passport.authenticate("google", {
     successRedirect: "/",
-    successFlash: "Google log in Success !", 
     failureRedirect: "/login",
-    successFlash: "Google log in failure"
   }));
 
 // End Route--------------------------------------------------

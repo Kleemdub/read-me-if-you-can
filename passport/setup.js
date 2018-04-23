@@ -1,5 +1,6 @@
 const passport = require("passport");
 const User = require("../models/userModel");
+const flash = require('flash');
 
 require("./google-strategy");
 

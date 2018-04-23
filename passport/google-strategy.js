@@ -1,4 +1,5 @@
 const passport       = require("passport");
+const flash = require('flash');
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 
 const User =  require("../models/userModel");
