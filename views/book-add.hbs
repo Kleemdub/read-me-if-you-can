@@ -1,1 +1,40 @@
-<h2>Book Add</h2>
+<h2>Share a book</h2>
+
+<h3>Search a book by title</h3>
+<form method="GET" action="/search-book-process">
+    <input type="text" name="title" placeholder="e.g. The Count of Monte Cristo"/>
+    <button>Search a book</button>
+</form>
+
+
+{{#if bookFromApi}}
+    <h4>Choose a book from the list</h4>
+    <ul>
+        {{#each bookFromApi}}
+            {{#if this.hasThumbnail}}
+                <li>
+                    <a href="#"><img src="{{this.thumbnail}}" /></a>
+                    <h5>{{this.title}}</h5>
+                    {{#each this.authors}}
+                        {{#if @first}}
+                            <p>{{this}}</p>
+                        {{/if}}
+                    {{/each}}
+                    <form method="POST" action="/add-book-process">
+                        <input type="hidden" name="title" value="{{this.title}}" />
+                        {{#each this.authors}}
+                            {{#if @first}}
+                                <input type="hidden" name="author" value="{{this}}" />
+                            {{/if}}
+                        {{/each}}
+                        <input type="hidden" name="imageUrl" value="{{this.thumbnail}}" />
+                        <input type="hidden" name="description" value="{{this.description}}" />
+                        <button>Share this book</button>
+                    </form>
+                </li>
+            {{/if}}
+        {{/each}}
+
+    </ul>
+
+{{/if}}

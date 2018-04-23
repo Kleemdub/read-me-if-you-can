@@ -18,7 +18,8 @@ mongoose.Promise = Promise;
 mongoose
   .connect('mongodb://localhost/read-me-if-you-can', {useMongoClient: true})
   .then(() => {
-    console.log("RENAUD a plus de points que toi sur CODEWARS")
+    console.log("RENAUD a plus de points que toi sur CODEWARS");
+    console.log(">>> Ouais mais bon... J'EN AI QUAND MEME BEAUCOUP PLUS QUE TOI :p <<<");
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });
@@ -67,6 +68,9 @@ app.use('/', index);
 
 const authRouter = require('./routes/authRoutes');
 app.use('/', authRouter);
+
+const processRouter = require('./routes/process');
+app.use('/', processRouter);
 
 
 module.exports = app;
