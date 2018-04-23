@@ -14,7 +14,7 @@ mongoose.Promise = Promise;
 mongoose
   .connect('mongodb://localhost/read-me-if-you-can', {useMongoClient: true})
   .then(() => {
-    console.log('Connected to Mongo!')
+    console.log('AU BOULOT BERTRAND !!!')
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });
