@@ -34,6 +34,43 @@ router.post("/process-signup", (req, res, next) => {
     });
 });
 
+//login Route
+router.get("/login", (req, res, next) =>{
+  res.render("auth/login");
+});
+
+router.post("/process-login", (req, res, next) => {
+  const {email, password} = req.body;
+
+  User.findOne({ email })
+    .then((userDetails)=>{
+      if (!userDetails){
+        res.redirect("/login");
+        return;
+      }
+      
+      const { encryptedPassword } = userDetails;
+      if(!bcrypt.compareSync(password, encryptedPassword)) {
+        res.redirect("/login");
+        return
+      }
+    
+      req.login(userDetails, () =>{
+        res.redirect("/");
+      });
+    })
+    .catch((err) => {
+      next(err);
+    });
+
+});
+
+
+//logout route
+router.get("/logout", (req, res, next) => {
+  req.logout();
+  res.redirect("/signup");
+});
 
 // End Route--------------------------------------------------
 module.exports = router;

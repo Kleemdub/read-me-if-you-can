@@ -8,14 +8,22 @@
     <h1>Read Me if you can</h1>
 
       <nav>
-        <a href="/">Home</a>
-        <a href="/signup">Signup</a>
-        <a href="/login">Login</a>
+
+        {{#if blahUser}}
+
         <a href="/books-list">Books List</a>
         <a href="/">Books Map</a>
         <a href="/book-add">Add a book</a>
         <a href="/book-page">Book Page</a>
         <a href="/user-account">My account</a>
+        <a href="/logout">Logout</a>
+
+        {{else}}
+          <a href="/signup">Signup now</a>
+          <p>Already have an account?
+            <a href="/login">Log In</a>
+          </p>
+        {{/if}}
 
     </nav>
 
