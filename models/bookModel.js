@@ -10,7 +10,7 @@ const bookSchema = new Schema({
     status: {
         type: String,
         enum: ["pending", "cached", "found"],
-        default: "normal"
+        default: "pending"
     },
     user: {
         type: Schema.Types.ObjectId,
