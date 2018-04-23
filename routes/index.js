@@ -18,4 +18,12 @@ router.get('/books-list', (req, res, next) => {
   res.render('books-list');
 });
 
+router.get('/book-page/:bookId', (req, res, next) => {
+  res.render('book-page');
+});
+
+router.get('/book-caching/:bookId', (req, res, next) => {
+  res.render('book-caching');
+});
+
 module.exports = router;

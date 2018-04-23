@@ -74,19 +74,21 @@ router.get("/logout", (req, res, next) => {
 });
 
 //Route Google 
-router.get("/google/login",
-  passport.authenticate("google", {
-    scope: [
-      "https://www.googleapis.com/auth/plus.login",
-      "https://www.googleapis.com/auth/plus.profile.emails.read"
-    ]
-  }));
+router.get("/google/login", passport.authenticate("google", {
+  scope: [
+    "https://www.googleapis.com/auth/plus.login",
+    "https://www.googleapis.com/auth/plus.profile.emails.read"
+  ]
+}));
 
-router.get("/google/success", 
-  passport.authenticate("google", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-  }));
+router.get("/google/success", passport.authenticate("google", {
+  successRedirect: "/",
+  failureRedirect: "/login",
+}));
+
+router.get("/user-account/:userId", (req, res, next) => {
+  res.render('auth/user-account');
+});
 
 // End Route--------------------------------------------------
 module.exports = router;
