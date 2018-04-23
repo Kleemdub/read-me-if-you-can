@@ -84,9 +84,7 @@ router.get("/google/login",
 router.get("/google/success", 
   passport.authenticate("google", {
     successRedirect: "/",
-    successFlash: "Google log in Success !", 
     failureRedirect: "/login",
-    successFlash: "Google log in failure"
   }));
 
 // End Route--------------------------------------------------

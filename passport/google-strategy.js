@@ -38,4 +38,3 @@ passport.use(new GoogleStrategy({
       done(err);
     });
 }));
-
