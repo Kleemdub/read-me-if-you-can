@@ -47,12 +47,15 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'Read me if you can';
 
 
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const authRouter = require('./routes/authRoutes');
+app.use('/', authRouter);
 
 
 module.exports = app;
