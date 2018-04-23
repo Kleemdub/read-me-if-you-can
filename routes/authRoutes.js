@@ -72,5 +72,22 @@ router.get("/logout", (req, res, next) => {
   res.redirect("/signup");
 });
 
+//Route Google 
+router.get("/google/login",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/plus.profile.emails.read"
+    ]
+  }));
+
+router.get("/google/success", 
+  passport.authenticate("google", {
+    successRedirect: "/",
+    successFlash: "Google log in Success !", 
+    failureRedirect: "/login",
+    successFlash: "Google log in failure"
+  }));
+
 // End Route--------------------------------------------------
 module.exports = router;
