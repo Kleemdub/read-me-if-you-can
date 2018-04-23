@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const cacheModel = new Schema({
+const cacheSchema = new Schema({
     coordinates: {type: [Number], required: true },
     clue: { type: String, required: true },
     user: {
@@ -14,6 +14,6 @@ const cacheModel = new Schema({
     timestamps: true
 });
 
-const Cache = mongoose.model("Cache", movieSchema);
+const Cache = mongoose.model("Cache", cacheSchema);
 
 module.exports = Cache;
