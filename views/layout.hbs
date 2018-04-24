@@ -8,6 +8,9 @@
     <!--Import Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
   </head>
   <body>
 
@@ -19,7 +22,7 @@
       <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Read Me if you can</a>
+            <a href="/" class="brand-logo"><img class="responsive-img rmiyc-logo" src="./images/rmiyc_logo_300x60.png" /></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
 
@@ -66,11 +69,11 @@
 
     {{!-- END OF THE HEADER //////////////////////////////////////////////////////////////////// --}}
 
-    <main class="container main-container">
+    {{!-- <main class="container main-container"> --}}
 
       {{{body}}}
 
-    </main>
+    {{!-- </main> --}}
 
     
 
@@ -101,7 +104,7 @@
     </footer>
 
     
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="/javascripts/layout-script.js"></script>
   </body>

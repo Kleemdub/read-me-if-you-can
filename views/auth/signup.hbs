@@ -1,28 +1,30 @@
-{{!-- <h2>Sign up</h2> --}}
+<main class="container main-container">
 
-{{!-- <div class="row">
-      <div class="col s6 my-blue">6-columns (one-half)</div>
-      <div class="col s6 my-orange">6-columns (one-half)</div>
-</div> --}}
-<div class="row">
-      <div class="col s12 l6 col-gauche">Blah Blah Blah</div>
-      
-      <div class="col s12 l6 col-droite">
+  <div class="row">
+    <div class="col s12 l6 col-gauche">
+      <img class="rmify-logo-large responsive-img" src="../../images/rmiyc_logo_large.png" />
+      <img class="smartphone responsive-img" src="../../images/smartphone.png" />
+    </div>
+    
+    <div class="col s12 l6 col-droite">
 
-        <section class="google-login">
-          {{!-- <h4>LOG IN WITH YOUR GOOGLE ACCOUNT</h4> --}}
-          <button class="google-btn">
-            <a href="/google/login">
-              <p class="left">LOG IN WITH YOUR<br/> GOOGLE ACCOUNT</p>
-              <img class=" right google-image" src="../../images/Google_logo-640x210.png" />
-            </a>
-          </button>
-        </section>
+      <section class="google-login">
+        <button class="google-btn">
+          <a class="google-link" href="/google/login">
+            <img class="google-image responsive-img" src="../../images/Google_logo.png" />
+          </a>
+        </button>
+      </section>
 
-        <section class="sign-up-section">
-          <h4>SIGN UP</h4>
-          <form id="signup-form" action="/process-signup" method="post">
+      <section class="log-in-section">
+        <p>Already have an account?</p><a href="/login">LOG IN!</a>
+        <div class="clearBoth"></div>
+      </section>
 
+      <section class="sign-up-section">
+        <h4>SIGN UP</h4>
+
+        <form id="signup-form" action="/process-signup" method="post">
 
           <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
@@ -56,16 +58,20 @@
 
           <br>
 
-            <button class="waves-effect waves-light btn sign-up-btn blue darken-3 right">Sign up</button>
-          </form>
+          <button class="waves-effect waves-light btn sign-up-btn blue darken-3 right">Sign up</button>
+        </form>
 
-          <div class="clearBoth"></div>
-        </section>
+        <div class="clearBoth"></div>
+      </section>
 
-        
-        
+      
+      
 
-      </div>
+    </div>
 
-</div>
+  </div>
 
+</main>
+
+
+<script src='/javascripts/signup-script.js'></script>
