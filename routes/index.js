@@ -2,6 +2,7 @@ const passport = require('passport');
 const express  = require('express');
 const bcrypt   = require('bcryptjs'); 
 const User     = require('../models/userModel');
+const Cache     = require('../models/cacheModel');
 const flash = require('flash');
 const router   = express.Router();
 
@@ -40,6 +41,45 @@ router.get('/book-caching/:bookId', (req, res, next) => {
     return;
   }
   res.render('book-caching');
+});
+
+
+// BOOK CACHING - GOOGLE MAPS ///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+router.get('/book-caching', (req, res, next)=>{
+  res.render('book-caching');
+});
+
+router.post('/process-caching', (req, res, next) => {
+res.send(req.body);
+
+//   const {clue, latitude, longitude} = req.body;
+
+// const location = {
+//   type: 'Point',
+//   coordinates: [latitude, longitude]
+// };
+
+// Cache.create({clue, location})
+//   .then(()=>{
+//     res.redirect('/');
+//   })
+//   .catch((err)=>{
+//     next(err);
+//   })
+});
+
+
+//route to add the location from the DB to appear them on the front end (ça fonctionne)
+router.get('/caching/data', (req, res, next)=>{
+  Cache.find()
+    .then((cacheFromDb) => {
+      res.json(cacheFromDb);
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 module.exports = router;

@@ -73,24 +73,6 @@ router.get('/search-author-process', (req, res, next) => {
 });
 
 
-// ADD BOOK IN THE DATABASE ///////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
-
-router.post('/add-book-process', (req, res, next) => {
-
-    const { title, author, imageUrl, description } = req.body;
-    const status = "pending";
-    const user = req.user;
-
-    Book.create({ title, author, imageUrl, description, status, user })
-    .then((addedBook) => {
-        res.redirect(`/book-caching/${addedBook._id}`);
-    })
-    .catch((err) => {
-        next(err);
-    });
-});
-
 
 // End Route--------------------------------------------------
 module.exports = router;

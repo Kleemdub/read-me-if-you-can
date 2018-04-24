@@ -61,8 +61,8 @@ a {
   color: #43a3e6;
   transition: .3s ease background; }
 
-#map {
-  width: 600px;
+.map {
+  width: auto;
   height: 600px;
   border: solid 1px black; }
 
