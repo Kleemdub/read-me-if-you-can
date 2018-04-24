@@ -1,7 +1,39 @@
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
+
+// GENERAL LAYOUT ////////////////////////
+
+.nav-wrapper {
+  background-color: rgb(31, 60, 143);
+  padding-left: 20px;
+  padding-right:20px;
+}
+
+.nav-wrapper a {
+  font-size:1.3em;
+  letter-spacing: 1px;
+  font-weight:300;
+}
+
+.fade-text {
+  opacity: 0.5;
+}
+
+.brand-logo {
+  // margin-left:50px;
+  // margin-right:50px;
+}
+
+.page-footer {
+  background-color: rgb(9, 19, 49);
+}
+
+.page-footer .footer-copyright {
+  background-color: rgb(2, 8, 24);
+}
+
 
 a {
   color: #00B7FF;

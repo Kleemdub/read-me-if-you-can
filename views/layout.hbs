@@ -2,34 +2,104 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!--Import Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Read Me if you can</h1>
 
-      <nav>
+    {{!-- HEADER /////////////////////////////////////////////////////////////////////////////// --}}
+
+    <header>
+
+      {{!-- NAV FOR LAREGE SCREEN  --}}
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Read Me if you can</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+
+              {{#if blahUser}}
+
+                <li><a href="/">Books Map</a></li>
+                <li><a href="/books-list">Books List</a></li>
+                <li><a href="/book-add">Share a book</a></li>
+                {{!-- <li><a href="/book-page">Book Page</a></li> --}}
+                <li><a href="/user-account">My account</a></li>
+                <li><a href="/logout">Logout</a></li>
+
+              {{else}}
+                  <li><a href="/signup">Signup now</a>
+                  <li><a href="/login"><span class="fade-text">Already have an account?</span> Log In</a></li>
+              {{/if}}
+
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      {{!-- NAV FOR MOBILE  --}}
+      <ul class="sidenav" id="mobile-demo">
 
         {{#if blahUser}}
 
-        <a href="/books-list">Books List</a>
-        <a href="/">Books Map</a>
-        <a href="/book-add">Add a book</a>
-        <a href="/book-page">Book Page</a>
-        <a href="/user-account">My account</a>
-        <a href="/logout">Logout</a>
+          <li><a href="/">Books Map</a></li>
+          <li><a href="/books-list">Books List</a></li>
+          <li><a href="/book-add">Share a book</a></li>
+          {{!-- <li><a href="/book-page">Book Page</a></li> --}}
+          <li><a href="/user-account">My account</a></li>
+          <li><a href="/logout">Logout</a></li>
 
         {{else}}
-          <a href="/signup">Signup now</a>
-          <p>Already have an account?
-            <a href="/login">Log In</a>
-          </p>
+            <li><a href="/signup">Signup now</a>
+            <li><a href="/login">Log In</a></li>
         {{/if}}
 
-    </nav>
+      </ul>
+
+    </header>
+
+    {{!-- END OF THE HEADER //////////////////////////////////////////////////////////////////// --}}
+
 
     {{{body}}}
 
-    <script src='/javascripts/script.js'></script>
+    {{!-- FOOTER ////////////////////////////////////////////////////////////////////////////// --}}
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Made with love at Ironhack
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="/javascripts/layout-script.js"></script>
   </body>
 </html>
 

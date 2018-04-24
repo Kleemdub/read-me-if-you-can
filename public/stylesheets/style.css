@@ -1,6 +1,24 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+
+.nav-wrapper {
+  background-color: #1f3c8f;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.nav-wrapper a {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  font-weight: 300; }
+
+.fade-text {
+  opacity: 0.5; }
+
+.page-footer {
+  background-color: #091331; }
+
+.page-footer .footer-copyright {
+  background-color: #020818; }
 
 a {
   color: #00B7FF; }
