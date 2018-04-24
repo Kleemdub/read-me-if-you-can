@@ -60,6 +60,7 @@ passportSetup(app);
 
 // default value for title local
 app.locals.title = 'Read me if you can';
+app.locals.mapKey = process.env.google_maps_key
 
 
 

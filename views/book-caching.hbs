@@ -1,3 +1,31 @@
 <h2>Cache this book!</h2>
 
 <p>Thank you for sharing this book, now let's hide it.</p>
+
+<form action="process-caching" method="post">
+  <label>
+    Clue
+    <input type="text" name="clue" placeholder="Your clue">
+  </label>
+
+  <label>
+    Location:
+    <input type="text" placeholder="Address of your hideout" class="location-input" />
+  </label>
+
+  <input type="hidden" name="latitude" class="lat-input" />
+  <input type="hidden" name="longitude" class="lng-input" />
+
+  <button>Add this location</button>
+
+</form>
+
+<div class="map" style="display:none;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{mapKey}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src='/javascripts/script.js'></script>
+
+
+
+
