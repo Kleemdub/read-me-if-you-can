@@ -8,38 +8,75 @@ const Cache    = require("../models/cacheModel");
 const User     = require("../models/userModel");
 const router   = express.Router();
 
+
+// SEARCH BOOK BY TITLE ///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
 router.get('/search-book-process', (req, res, next) => {
 
     var options = {
         field: 'title',
-        limit: 20,
+        limit: 30,
         order: 'relevance'
     };
 
     books.search(req.query.title, options, function(error, results) {
-        if ( ! error ) {
+        if (!error) {
 
             results.forEach((oneBook) => {
-                if(oneBook.thumbnail == "undefined"){
+                if(oneBook.thumbnail == "undefined") {
                     oneBook.hasThumbnail = false;
                 }
-                else{
+                else {
                     oneBook.hasThumbnail = true;
                 }
             });
-            // console.log(results);
-
             res.locals.bookFromApi = results;
-
             res.render('book-add');
-        } else {
+        }
+        else {
             console.log(error);
         }
     });
 });
 
+
+// SEARCH BOOK BY AUTHOR //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+router.get('/search-author-process', (req, res, next) => {
+
+    var options = {
+        field: 'author',
+        limit: 30,
+        order: 'relevance'
+    };
+
+    books.search(req.query.author, options, function(error, results) {
+        if (!error) {
+
+            results.forEach((oneBook) => {
+                if(oneBook.thumbnail == "undefined") {
+                    oneBook.hasThumbnail = false;
+                }
+                else {
+                    oneBook.hasThumbnail = true;
+                }
+            });
+            res.locals.bookFromApi = results;
+            res.render('book-add');
+        }
+        else {
+            console.log(error);
+        }
+    });
+});
+
+
+// ADD BOOK IN THE DATABASE ///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
 router.post('/add-book-process', (req, res, next) => {
-    // res.send(req.body);
 
     const { title, author, imageUrl, description } = req.body;
     const status = "pending";
@@ -47,18 +84,13 @@ router.post('/add-book-process', (req, res, next) => {
 
     Book.create({ title, author, imageUrl, description, status, user })
     .then((addedBook) => {
-        // console.log('Id of the added book : ' + addedBook._id);
         res.redirect(`/book-caching/${addedBook._id}`);
     })
     .catch((err) => {
         next(err);
     });
-
 });
 
-router.get('/book-caching/:bookId', (req, res, next) => {
-    render('book-caching');
-});
 
 // End Route--------------------------------------------------
 module.exports = router;

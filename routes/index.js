@@ -11,19 +11,35 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/book-add', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
   res.render('book-add');
 });
 
 router.get('/books-list', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
   res.render('books-list');
 });
 
 router.get('/book-page/:bookId', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
   res.render('book-page');
 });
 
 router.get('/book-caching/:bookId', (req, res, next) => {
-  res.render('book-caching');
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
+  render('book-caching');
 });
 
 module.exports = router;

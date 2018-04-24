@@ -1,11 +1,16 @@
 <h2>Share a book</h2>
 
-<h3>Search a book by title</h3>
+<h3>Search by title</h3>
 <form method="GET" action="/search-book-process">
     <input type="text" name="title" placeholder="e.g. The Count of Monte Cristo"/>
     <button>Search a book</button>
 </form>
 
+<h3>Search by author</h3>
+<form method="GET" action="/search-author-process">
+    <input type="text" name="author" placeholder="e.g. Alexandre Dumas"/>
+    <button>Search a book</button>
+</form>
 
 {{#if bookFromApi}}
     <h4>Choose a book from the list</h4>

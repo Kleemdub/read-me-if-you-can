@@ -87,6 +87,10 @@ router.get("/google/success", passport.authenticate("google", {
 }));
 
 router.get("/user-account/:userId", (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
   res.render('auth/user-account');
 });
 
