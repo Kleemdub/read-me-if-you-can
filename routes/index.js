@@ -47,9 +47,6 @@ router.get('/book-caching/:bookId', (req, res, next) => {
 // BOOK CACHING - GOOGLE MAPS ///////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-router.get('/book-caching', (req, res, next)=>{
-  res.render('book-caching');
-});
 
 router.post('/process-caching', (req, res, next) => {
 res.send(req.body);
