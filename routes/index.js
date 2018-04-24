@@ -39,7 +39,7 @@ router.get('/book-caching/:bookId', (req, res, next) => {
     res.redirect('/signup');
     return;
   }
-  render('book-caching');
+  res.render('book-caching');
 });
 
 module.exports = router;
