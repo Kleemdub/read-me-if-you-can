@@ -14,55 +14,166 @@ body {
 .fade-text {
   opacity: 0.5; }
 
+.main-container {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
 .page-footer {
   background-color: #091331; }
 
 .page-footer .footer-copyright {
   background-color: #020818; }
 
-a {
-  color: #00B7FF; }
+.page-footer .footer-copyright p {
+  color: #ff7b00; }
 
-#form {
-  margin: 30px auto;
-  width: 380px; }
+.col-gauche {
+  background-color: #9b9b9b;
+  height: 300px;
+  margin-bottom: 40px; }
 
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%; }
+.clearBoth {
+  clear: both; }
 
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%; }
+.row h4 {
+  color: #1f3c8f;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 1.7em; }
 
-#form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .3s ease background;
-  width: 100%; }
+.row .sign-up-btn {
+  width: 150px; }
 
-#form button:hover {
+.row .input-field input[type=text]:focus + label {
+  color: #1f3c8f; }
+
+.row .input-field .prefix.active {
+  color: #ffa600; }
+
+.row .input-field .prefix {
+  color: #a5a5a5; }
+
+.row .input-field input[type=text]:focus {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.row .input-field input[type=text].valid {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.row .input-field input[type=email]:focus + label {
+  color: #1f3c8f; }
+
+.row .input-field input[type=email]:focus {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.row .input-field input[type=email].valid {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.row .input-field input[type=password]:focus + label {
+  color: #1f3c8f; }
+
+.row .input-field input[type=password]:focus {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.row .input-field input[type=password].valid {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.sign-up-section {
+  margin-top: 15px; }
+
+.google-login {
+  padding-bottom: 15px; }
+
+.google-btn {
   background: #fff;
-  color: #43a3e6;
-  transition: .3s ease background; }
+  border: none;
+  width: 100%;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  border-radius: 10px;
+  padding: 10px 20px;
+  padding-right: 30px;
+  display: block; }
 
-#map {
-  width: 600px;
+.google-btn:hover {
+  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.322); }
+
+.google-btn p {
+  font-size: 1.2em;
+  padding-left: 10px;
+  color: #1f3c8f; }
+
+.google-image {
+  border: none;
+  width: 200px; }
+
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #091331;
+  margin-bottom: 40px; }
+
+.search-section .input-field input[type=text]:focus + label {
+  color: #1f3c8f; }
+
+.search-section .input-field .prefix.active {
+  color: #ffa600; }
+
+.search-section .input-field .prefix {
+  color: #a5a5a5; }
+
+.search-section .input-field input[type=text]:focus {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.search-section .input-field input[type=text].valid {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.book-list-section {
+  width: 100%;
+  background: #ddd;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #091331; }
+
+.book-list-section h4 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #091331;
+  margin-bottom: 40px; }
+
+.finded-book-item {
+  width: 150px;
+  height: 300px; }
+
+.finded-book-item img {
+  width: 130px;
+  height: 190px; }
+
+.finded-book-item h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+  color: #091331;
+  font-weight: 700;
+  padding-top: 10px; }
+
+.finded-book-item p {
+  margin: 0;
+  padding: 0;
+  padding-top: 4px;
+  font-size: 1em; }
+
+.map {
+  width: auto;
   height: 600px;
   border: solid 1px black; }
 

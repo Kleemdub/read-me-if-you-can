@@ -1,37 +1,71 @@
-<h2>Sign up</h2>
+{{!-- <h2>Sign up</h2> --}}
 
-<form id="form" action="/process-signup" method="post">
-<label>
-  Full Name
-  <input type="text" name="fullName" placeholder="e.g. Han">
-</label>
-<br>
+{{!-- <div class="row">
+      <div class="col s6 my-blue">6-columns (one-half)</div>
+      <div class="col s6 my-orange">6-columns (one-half)</div>
+</div> --}}
+<div class="row">
+      <div class="col s12 l6 col-gauche">Blah Blah Blah</div>
+      
+      <div class="col s12 l6 col-droite">
 
-<label>
-  Nickname
-  <input type="text" name="nickName" placeholder="e.g. Hansolo">
-</label>
-<br>
+        <section class="google-login">
+          {{!-- <h4>LOG IN WITH YOUR GOOGLE ACCOUNT</h4> --}}
+          <button class="google-btn">
+            <a href="/google/login">
+              <p class="left">LOG IN WITH YOUR<br/> GOOGLE ACCOUNT</p>
+              <img class=" right google-image" src="../../images/Google_logo-640x210.png" />
+            </a>
+          </button>
+        </section>
 
-<label>
-  Email
-  <input type="email" name="email" placeholder="e.g. blah@gmail.com">
-</label>
-<br>
+        <section class="sign-up-section">
+          <h4>SIGN UP</h4>
+          <form id="signup-form" action="/process-signup" method="post">
 
-<label>
-  Password
-  <input type="password" name="password" placeholder="Password">
-</label>
-<br>
 
-<label>
-  Confirm Password
-  <input type="password" name="password-match" placeholder="Confirm Password">
-</label>
-<br>
+          <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="fullName" type="text" name="fullName" class="validate">
+            <label for="fullName">Full Name</label>
+          </div>
 
-  <button>🤙 Sign up</button>
-</form>
+          <div class="input-field">
+            <i class="material-icons prefix">insert_emoticon</i>
+            <input id="nickName" type="text" name="nickName" class="validate">
+            <label for="nickName">Nickname</label>
+          </div>
 
-<button><a href="/google/login">Google login</a></button>
+          <div class="input-field">
+            <i class="material-icons prefix">mail</i>
+            <input id="email" type="email" name="email" class="validate">
+            <label for="email">Email</label>
+          </div>
+
+          <div class="input-field">
+            <i class="material-icons prefix">lock</i>
+            <input id="password" type="password" name="password" class="validate">
+            <label for="password">Password</label>
+          </div>
+
+          <div class="input-field">
+            <i class="material-icons prefix">lock_outline</i>
+            <input id="password-match" type="password" name="password-match" class="validate">
+            <label for="password-match">Confirm Password</label>
+          </div>
+
+          <br>
+
+            <button class="waves-effect waves-light btn sign-up-btn blue darken-3 right">Sign up</button>
+          </form>
+
+          <div class="clearBoth"></div>
+        </section>
+
+        
+        
+
+      </div>
+
+</div>
+

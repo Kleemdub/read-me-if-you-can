@@ -3,7 +3,7 @@ body {
   font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 
-// GENERAL LAYOUT ////////////////////////
+// GENERAL LAYOUT ////////////////////////////////////////////////////////
 
 .nav-wrapper {
   background-color: rgb(31, 60, 143);
@@ -21,9 +21,13 @@ body {
   opacity: 0.5;
 }
 
-.brand-logo {
-  // margin-left:50px;
-  // margin-right:50px;
+// .brand-logo {
+
+// }
+
+.main-container {
+  padding-top:50px;
+  padding-bottom:50px;
 }
 
 .page-footer {
@@ -34,55 +38,210 @@ body {
   background-color: rgb(2, 8, 24);
 }
 
-
-a {
-  color: #00B7FF;
-}
-#form {
-  margin: 30px auto;
-  width: 380px;
+.page-footer .footer-copyright p {
+  color: rgb(255, 123, 0);
 }
 
-#form label {
-  color: #666;
-  display: inline-block;
-  margin-bottom: 10px;
-  text-align: center;
-  width: 100%;
+
+// SIGN UP ///////////////////////////////////////////////////////////
+
+.col-gauche {
+  background-color: rgb(155, 155, 155);
+  height:300px;
+  margin-bottom:40px;
+  // width:450px;
 }
 
-#form input,
-#form button {
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: 0;
-  padding: 4px;
-  width: 100%;
+// .col-droite {
+  
+// }
+
+.clearBoth {
+  clear: both;
 }
 
-#form button {
-  background: #43a3e6;
-  border: 1px solid #43a3e6;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  padding: 8px 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: .3s ease background;
-  width: 100%;
+.row h4 {
+  color: rgb(31, 60, 143);
+  padding:0;
+  margin:0;
+  margin-bottom: 30px;
+  font-size: 1.7em;
 }
 
-#form button:hover {
+.row .sign-up-btn {
+  width:150px;
+  // margin-left:5%;
+}
+
+.row .input-field input[type=text]:focus + label {
+  color: rgb(31, 60, 143);
+}
+
+.row .input-field .prefix.active {
+  color: rgb(255, 166, 0);
+}
+
+.row .input-field .prefix {
+  // color: rgb(31, 60, 143);
+  color: rgb(165, 165, 165);
+}
+
+.row .input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.row .input-field input[type=text].valid {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.row .input-field input[type=email]:focus + label {
+  color: rgb(31, 60, 143);
+}
+
+.row .input-field input[type=email]:focus {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.row .input-field input[type=email].valid {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.row .input-field input[type=password]:focus + label {
+  color: rgb(31, 60, 143);
+}
+
+.row .input-field input[type=password]:focus {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.row .input-field input[type=password].valid {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.sign-up-section {
+  margin-top:15px;
+}
+
+.google-login {
+  // border-bottom:1px solid rgb(31, 60, 143);
+  padding-bottom: 15px;
+}
+
+.google-btn {
   background: #fff;
-  color: #43a3e6;
-  transition: .3s ease background;
+  border:none;
+  width:100%;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  border-radius: 10px;
+  padding:10px 20px;
+  padding-right: 30px;
+  display: block;
 }
 
-#map {
-  width: 600px;
+.google-btn:hover {
+  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.322);
+}
+
+.google-btn p {
+  font-size: 1.2em;
+  padding-left:10px;
+  color: rgb(31, 60, 143);
+}
+
+.google-image {
+  border:none;
+  width:200px;
+  // box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  // border-radius: 10px;
+  // padding:10px 20px;
+}
+
+
+// BOOK ADD ///////////////////////////////////////////////////////////
+
+h2 {
+  text-align: center;
+  margin:0;
+  padding:0;
+  color: rgb(9, 19, 49);
+  margin-bottom: 40px;
+}
+
+.search-section .input-field input[type=text]:focus + label {
+  color: rgb(31, 60, 143);
+}
+
+.search-section .input-field .prefix.active {
+  color: rgb(255, 166, 0);
+}
+
+.search-section .input-field .prefix {
+  // color: rgb(31, 60, 143);
+  color: rgb(165, 165, 165);
+}
+
+.search-section .input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.search-section .input-field input[type=text].valid {
+  border-bottom: 1px solid rgb(255, 166, 0);
+  box-shadow: 0 1px 0 0 rgb(255, 166, 0);
+}
+
+.book-list-section {
+  width:100%;
+  background: #ddd;
+  margin-top:50px;
+  padding-top:30px;
+  border-top:1px solid rgb(9, 19, 49);
+}
+
+.book-list-section h4 {
+  text-align: center;
+  margin:0;
+  padding:0;
+  color: rgb(9, 19, 49);
+  margin-bottom: 40px;
+}
+
+.finded-book-item  {
+  width:150px;
+  height:300px;
+}
+
+.finded-book-item img {
+  width:130px;
+  height:190px;
+}
+
+.finded-book-item h5 {
+  margin:0;
+  padding:0;
+  font-size: 1.1em;
+  color: rgb(9, 19, 49);
+  font-weight: 700;
+  padding-top:10px;
+}
+
+.finded-book-item p {
+  margin:0;
+  padding:0;
+  padding-top:4px;
+  font-size: 1em;
+}
+
+// GOGGLE MAP ////////////////////////////////////////////////////////
+
+.map {
+  width: auto;
   height: 600px;
   border: solid 1px black;
 }
