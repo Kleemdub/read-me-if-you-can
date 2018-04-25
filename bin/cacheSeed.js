@@ -51,7 +51,7 @@ const cache = [
 
 Cache.create(cache)
 .then( () => {
-    console.log(`Created ${cache.length} fake books`);
+    console.log(`Created ${cache.length} fake caches`);
 })
 .catch( (err) => {
     console.log(`Error connecting to mongo`, err);
