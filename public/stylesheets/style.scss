@@ -36,9 +36,15 @@ body {
 
 // }
 
+
 .main-container {
   padding-top:50px;
   padding-bottom:50px;
+}
+
+.main-container .row, .main-container .col {
+  padding-left:0;
+  padding-right:0;
 }
 
 .page-footer {
@@ -384,19 +390,45 @@ h2 {
 
 .book-page-infos p {
   text-align: justify;
-  border-bottom: 1px solid rgb(182, 182, 182);
+  // border-bottom: 1px solid rgb(182, 182, 182);
   padding-bottom:30px;
+}
+
+.book-infos-row {
+  // border-bottom: 1px solid rgb(182, 182, 182);
+  padding:0;
+}
+
+.book-page-clue h5 {
+  margin-top:0;
 }
 
 .book-page-clue p {
   border:none;
-  float:left;
+  // float:left;
   padding: 0;
   border-left:6px solid rgba(31, 61, 143, 0.466);
   padding-left:20px;
   // font-weight: 300;
   font-style: italic;
+  padding-right:70px;
 }
+
+.book-map-row {
+  // margin-top:50px;
+  margin-top:0px;
+}
+
+.found-btn {
+  // width:250px;
+  width:85%;
+  height:50px;
+  margin-top:30px;
+  font-size:1.6em;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
 
 .book-id {
   display: none;
@@ -415,5 +447,5 @@ h2 {
   width: auto;
   height: 350px;
   box-shadow: 0px 4px 16px rgb(155, 155, 155);
-  margin-top:30px;
+  margin-top:0px;
 }

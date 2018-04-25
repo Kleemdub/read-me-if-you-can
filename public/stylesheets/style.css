@@ -27,6 +27,10 @@ body {
   padding-top: 50px;
   padding-bottom: 50px; }
 
+.main-container .row, .main-container .col {
+  padding-left: 0;
+  padding-right: 0; }
+
 .page-footer {
   background-color: #091331; }
 
@@ -280,16 +284,32 @@ h2 {
 
 .book-page-infos p {
   text-align: justify;
-  border-bottom: 1px solid #b6b6b6;
   padding-bottom: 30px; }
+
+.book-infos-row {
+  padding: 0; }
+
+.book-page-clue h5 {
+  margin-top: 0; }
 
 .book-page-clue p {
   border: none;
-  float: left;
   padding: 0;
   border-left: 6px solid rgba(31, 61, 143, 0.466);
   padding-left: 20px;
-  font-style: italic; }
+  font-style: italic;
+  padding-right: 70px; }
+
+.book-map-row {
+  margin-top: 0px; }
+
+.found-btn {
+  width: 85%;
+  height: 50px;
+  margin-top: 30px;
+  font-size: 1.6em;
+  font-weight: 300;
+  letter-spacing: 2px; }
 
 .book-id {
   display: none; }
@@ -302,6 +322,6 @@ h2 {
   width: auto;
   height: 350px;
   box-shadow: 0px 4px 16px #9b9b9b;
-  margin-top: 30px; }
+  margin-top: 0px; }
 
 /*# sourceMappingURL=style.css.map */
