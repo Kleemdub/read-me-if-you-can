@@ -28,15 +28,15 @@ function startMap() {
       map.setCenter(user_location);
 
       // Add a marker for your user location
-      const userMarker = new google.maps.Marker({
-        position: {
-          lat: user_location.lat,
-          lng: user_location.lng
-        },
-        map: map,
-        title: "You are here",
-        animation: google.maps.Animation.DROP
-      });
+      // const userMarker = new google.maps.Marker({
+      //   position: {
+      //     lat: user_location.lat,
+      //     lng: user_location.lng
+      //   },
+      //   map: map,
+      //   title: "You are here",
+      //   animation: google.maps.Animation.DROP
+      // });
 
     }, function () {
       console.log('Error in the geolocation service.');

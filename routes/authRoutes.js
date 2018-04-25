@@ -2,6 +2,8 @@ const passport   = require('passport');
 const express    = require('express');
 const bcrypt     = require('bcryptjs'); 
 const User       = require('../models/userModel');
+const Cache      = require('../models/cacheModel');
+const Book       = require('../models/bookModel');
 const flash      = require('flash');
 const router     = express.Router();
 const nodemailer =  require('nodemailer');
@@ -139,16 +141,40 @@ router.get("/user-account/:userId", (req, res, next) => {
     return;
   }
   User.findById(req.params.userId)
-    .populate('caches')
     .then( (usersFromDb) => {
-      console.log(usersFromDb);
+      // console.log(usersFromDb)
       res.locals.user = usersFromDb;
-      res.render('auth/user-account');
+
+      Promise.all([   Book.find({user:usersFromDb._id})
+        .then( (booksFromDb)=>{
+          res.locals.myBook = booksFromDb;
+          console.log(res.locals.myBook);
+        })
+        .catch((err) => {
+          next(err);
+        }),
+         
+        Cache.find({user:usersFromDb._id})
+        .then( (cacheFromDb) => {
+          res.locals.myCache = cacheFromDb;
+          console.log(res.locals.myCache);
+
+        })
+        .catch((err) => {
+          next(err);
+        })
+      
+      ]).then(results => {
+        res.render('auth/user-account');
+
+      })
+   
+   
+
     })
     .catch((err)=>{
       next(err);
     });
-
 });
 
 
