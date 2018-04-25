@@ -16,7 +16,7 @@ const flash = require('flash');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/read-me-if-you-can', {useMongoClient: true})
+  .connect(process.env.database_url, {useMongoClient: true})
   .then(() => {
     console.log("->> READ ME IF YOU CAN <<- IS RUNNING :)");
   }).catch(err => {

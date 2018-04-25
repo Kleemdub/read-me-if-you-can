@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const mongoose = require("mongoose");
 
 const Book = require("../models/bookModel");
 
 mongoose.Promise = Promise;
 mongoose
-.connect('mongodb://localhost/read-me-if-you-can', {useMongoClient: true})
+.connect(process.env.database_url, {useMongoClient: true})
 .then(() => {
 console.log('Connected to Mongo!')
 }).catch(err => {
