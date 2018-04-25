@@ -9,14 +9,14 @@ function startMap() {
   // const user4 = { lat: 48.83565499999999,  lng: 2.396356400000059 };
 
   map = new google.maps.Map(mapDiv, {
-  zoom: 12,
-  center: parisCenter
-});
+    zoom: 12,
+    center: parisCenter
+  });
 
 
 
 
-//code to center the map based on user location
+  //code to center the map based on user location
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       const user_location = {

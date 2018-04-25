@@ -29,7 +29,14 @@ router.get('/books-list', (req, res, next) => {
     res.redirect('/signup');
     return;
   }
-  res.render('books-list');
+  Book.find({status: "cached"})
+  .then((bookList) => {
+    res.locals.books = bookList;
+    res.render('books-list');
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
 router.get('/book-page/:bookId', (req, res, next) => {
@@ -99,6 +106,17 @@ router.post('/process-caching/:bookId', (req, res, next) => {
 //route to add the location from the DB to appear them on the front end (ça fonctionne)
 router.get('/caching/data', (req, res, next)=>{
   Cache.find()
+  .populate('book')
+  .then((cacheFromDb) => {
+    res.json(cacheFromDb);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
+router.get('/caching/book/data/:bookID', (req, res, next)=>{
+  Cache.findOne({book:req.params.bookID})
   .populate('book')
   .then((cacheFromDb) => {
     res.json(cacheFromDb);

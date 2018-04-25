@@ -1,2 +1,41 @@
 <h2>ALL THE BOOKS TO FIND</h2>
 
+<main class="container main-container center-align">
+
+    {{!-- {{this.title}} --}}
+
+    {{!-- {{#each books}}
+        <div class="book-list-item">
+            <div class="left">
+                <img src="{{this.imageUrl}}"/>
+            </div>
+            <div class="left">
+                <h4>{{this.title}}</h4>
+                <h5>By {{this.author}}</h5>
+            </div>
+            <div class="clearBoth"></div>
+        </div>
+    {{/each}} --}}
+
+    
+    <div class="row">
+        {{#each books}}
+                <div class="finded-book-item left center-align col s6 m4 l3 xl2">
+                    <div class="add-form-wrap center-align">
+
+                        <img src="{{this.imageUrl}}" />   
+                        <div class="book-item-inner-wrap center-align">
+                            <h5>{{this.title}}</h5>
+                            <p>{{this.author}}</p>
+                            <button class="add-book-btn btn-floating btn-large waves-effect waves-light amber darken-1 pulse"><a href="/book-page/{{this._id}}"><i class="material-icons">info</i></a></button>
+                        </div>
+                    </div>
+                </div>
+        {{/each}}
+        <div class="clearBoth"></div>
+    </div>
+
+
+
+
+</main>

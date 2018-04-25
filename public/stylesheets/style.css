@@ -239,6 +239,9 @@ h2 {
   top: 90px;
   left: 26px; }
 
+.add-book-btn i {
+  font-size: 3em; }
+
 .finded-book-item h5 {
   margin: 0;
   padding: 0;
@@ -277,7 +280,7 @@ h2 {
 
 .book-page-infos p {
   text-align: justify;
-  border-bottom: 1px solid #868686;
+  border-bottom: 1px solid #b6b6b6;
   padding-bottom: 30px; }
 
 .book-page-clue p {
@@ -285,15 +288,20 @@ h2 {
   float: left;
   padding: 0;
   border-left: 6px solid rgba(31, 61, 143, 0.466);
-  padding-left: 20px; }
+  padding-left: 20px;
+  font-style: italic; }
 
-.book-page-clue .clue-icon {
-  font-size: 3em;
-  float: left; }
+.book-id {
+  display: none; }
 
 .map {
   width: auto;
-  height: 600px;
-  border: solid 1px black; }
+  height: 600px; }
+
+.book-page-infos .map {
+  width: auto;
+  height: 350px;
+  box-shadow: 0px 4px 16px #9b9b9b;
+  margin-top: 30px; }
 
 /*# sourceMappingURL=style.css.map */

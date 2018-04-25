@@ -140,6 +140,10 @@ router.get("/user-account/:userId", (req, res, next) => {
     res.redirect('/signup');
     return;
   }
+  else if(req.user._id != req.params.userId) {
+    res.redirect('/');
+    return;
+  }
   User.findById(req.params.userId)
     .then( (usersFromDb) => {
       // console.log(usersFromDb)

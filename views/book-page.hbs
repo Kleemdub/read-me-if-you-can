@@ -1,10 +1,6 @@
 <h2>BOOK CARD</h2>
 
-{{!-- {{book.title}}
-{{book.author}}
-{{book.imageUrl}}
-{{book.description}}
-{{book.cache.clue}} --}}
+<p class="book-id">{{book._id}}</p>
 
 <main class="container main-container">
 
@@ -28,10 +24,18 @@
                 
             </section>
             <div class="clearBoth"></div>
+
+            <div class="map"></div>
         </div>
 
         
+    
+    
     </div>
 
 
 </main>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{mapKey}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src='/javascripts/book-page-script.js'></script>
