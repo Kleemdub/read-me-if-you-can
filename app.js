@@ -18,8 +18,7 @@ mongoose.Promise = Promise;
 mongoose
   .connect('mongodb://localhost/read-me-if-you-can', {useMongoClient: true})
   .then(() => {
-    console.log("RENAUD a plus de points que toi sur CODEWARS");
-    console.log(">>> Ouais mais bon... J'EN AI QUAND MEME BEAUCOUP PLUS QUE TOI :p <<<");
+    console.log("->> READ ME IF YOU CAN <<- IS RUNNING :)");
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });
