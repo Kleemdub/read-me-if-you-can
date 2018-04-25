@@ -67,12 +67,12 @@ router.post('/process-caching/:bookId', (req, res, next) => {
 
   const user = req.user._id;
 
-  const bookId = req.params.bookId;
+  const book = req.params.bookId;
 
-  Cache.create({clue, location, user})
+  Cache.create({clue, location, user, book})
   .then((addedCache)=>{
     const cache = addedCache._id;
-    Book.findByIdAndUpdate(bookId, {cache})
+    Book.findByIdAndUpdate(book, {cache})
     .then(() => {
       res.redirect('/');
     })
@@ -89,23 +89,15 @@ router.post('/process-caching/:bookId', (req, res, next) => {
 //route to add the location from the DB to appear them on the front end (ça fonctionne)
 router.get('/caching/data', (req, res, next)=>{
   Cache.find()
-    .then((cacheFromDb) => {
-      res.json(cacheFromDb);
-    })
-    .catch((err) => {
-      next(err);
-    });
+  .populate('book')
+  .then((cacheFromDb) => {
+    res.json(cacheFromDb);
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
-
-
-router.get('/book-caching/:bookId', (req, res, next) => {
-  if(!req.user) {
-    res.redirect('/signup');
-    return;
-  }
-  res.render('book-caching');
-});
 
 
 module.exports = router;
