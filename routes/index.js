@@ -35,13 +35,6 @@ router.get('/book-page/:bookId', (req, res, next) => {
   res.render('book-page');
 });
 
-router.get('/book-caching/:bookId', (req, res, next) => {
-  if(!req.user) {
-    res.redirect('/signup');
-    return;
-  }
-  res.render('book-caching');
-});
 
 
 // BOOK CACHING - GOOGLE MAPS ///////////////////////////////////////////////////////////
@@ -81,5 +74,16 @@ router.get('/caching/data', (req, res, next)=>{
       next(err);
     });
 });
+
+
+
+router.get('/book-caching/:bookId', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
+  res.render('book-caching');
+});
+
 
 module.exports = router;
