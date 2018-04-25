@@ -8,6 +8,10 @@ const router   = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
   res.render('index');
 });
 
@@ -40,9 +44,6 @@ router.get('/book-page/:bookId', (req, res, next) => {
 // BOOK CACHING - GOOGLE MAPS ///////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-router.get('/book-caching', (req, res, next)=>{
-  res.render('book-caching');
-});
 
 router.post('/process-caching', (req, res, next) => {
 res.send(req.body);

@@ -5,6 +5,17 @@ body {
 
 // GENERAL LAYOUT ////////////////////////////////////////////////////////
 
+.rmiyc-logo {
+  border:none;
+  padding: 0;
+  margin:0;
+  margin-top:2px;
+}
+
+.navbar-fixed {
+  z-index: 99;
+}
+
 .nav-wrapper {
   background-color: rgb(31, 60, 143);
   padding-left: 20px;
@@ -42,14 +53,43 @@ body {
   color: rgb(255, 123, 0);
 }
 
+h2 {
+  text-align: center;
+  margin:0;
+  padding:0;
+  color: rgb(255, 123, 0);
+  margin-bottom: 40px;
+  background-color: rgb(9, 19, 49);
+  font-weight: 300;
+  font-size:3.5em;
+  letter-spacing: 2px;
+  padding-top:30px;
+  padding-bottom:30px;
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.37);
+  z-index: 90;
+}
+
+.index-title {
+  margin-bottom:0px;
+}
+
 
 // SIGN UP ///////////////////////////////////////////////////////////
 
 .col-gauche {
-  background-color: rgb(155, 155, 155);
-  height:300px;
+  // background-color: rgb(155, 155, 155);
+  // height:300px;
   margin-bottom:40px;
   // width:450px;
+}
+
+.rmify-logo-large {
+  width:auto;
+}
+
+.smartphone {
+  width:auto;
+  margin-top:35px;
 }
 
 // .col-droite {
@@ -125,12 +165,53 @@ body {
 }
 
 .sign-up-section {
-  margin-top:15px;
+  margin-top:0px;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  border-radius: 10px;
+  padding:30px 30px;
+}
+
+.log-in-section {
+  margin-bottom:25px;
+  margin-top:10px;
+  // background: #fff;
+  // border: 1px solid #fff;
+  // box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  // border-radius: 10px;
+  // padding:30px 30px;
+}
+
+.log-in-section p {
+  color:#fff;
+  font-weight: 300;
+  font-size: 1.7em;
+  margin:0;
+  padding:0;
+  float: left;
+}
+
+.log-in-section a {
+  color:rgb(31, 60, 143);
+  font-weight: 700;
+  font-size: 1.7em;
+  margin:0;
+  padding:0;
+  padding-left:10px;
+  float: left;
+}
+
+.log-in-section a:hover {
+  color: rgb(255, 166, 0);
 }
 
 .google-login {
   // border-bottom:1px solid rgb(31, 60, 143);
   padding-bottom: 15px;
+}
+
+.google-login a {
+  display: block;
 }
 
 .google-btn {
@@ -139,9 +220,10 @@ body {
   width:100%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
   border-radius: 10px;
-  padding:10px 20px;
-  padding-right: 30px;
+  // padding:10px 20px;
+  // padding-right: 30px;
   display: block;
+  // cursor: pointer;
 }
 
 .google-btn:hover {
@@ -156,7 +238,7 @@ body {
 
 .google-image {
   border:none;
-  width:200px;
+  width:auto;
   // box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
   // border-radius: 10px;
   // padding:10px 20px;
@@ -164,14 +246,6 @@ body {
 
 
 // BOOK ADD ///////////////////////////////////////////////////////////
-
-h2 {
-  text-align: center;
-  margin:0;
-  padding:0;
-  color: rgb(9, 19, 49);
-  margin-bottom: 40px;
-}
 
 .search-section .input-field input[type=text]:focus + label {
   color: rgb(31, 60, 143);
@@ -196,12 +270,16 @@ h2 {
   box-shadow: 0 1px 0 0 rgb(255, 166, 0);
 }
 
+.search-btn {
+  width:220px;
+}
+
 .book-list-section {
   width:100%;
-  background: #ddd;
+  // background: #ddd;
   margin-top:50px;
   padding-top:30px;
-  border-top:1px solid rgb(9, 19, 49);
+  // border-top:1px solid rgb(9, 19, 49);
 }
 
 .book-list-section h4 {
@@ -213,8 +291,11 @@ h2 {
 }
 
 .finded-book-item  {
-  width:150px;
-  height:300px;
+  // width:150px;
+  height:230px;
+  // position: relative;
+  overflow: hidden;
+  // background: #f00;
 }
 
 .finded-book-item img {
@@ -222,20 +303,54 @@ h2 {
   height:190px;
 }
 
+.add-form-wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow:hidden;
+  width:130px;
+  height:190px;
+  // background-color: #f00;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+}
+
+.add-form-wrap:hover  {
+  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.452);
+}
+
+.book-item-inner-wrap {
+  position: absolute;
+  width:110px;
+  height:170px;
+  top:10px;
+  top:200px;
+  left:10px;
+  background-color: rgba(4, 12, 36, 0.897);
+}
+
+.add-book-btn {
+  position: absolute;
+  top:-80px;
+  top:90px;
+  left:26px;
+}
+
 .finded-book-item h5 {
   margin:0;
   padding:0;
-  font-size: 1.1em;
-  color: rgb(9, 19, 49);
+  font-size: 1em;
+  color: #fff;
   font-weight: 700;
   padding-top:10px;
+  padding-left:5px;
+  padding-right:5px;
 }
 
 .finded-book-item p {
   margin:0;
   padding:0;
   padding-top:4px;
-  font-size: 1em;
+  font-size: 0.9em;
+  color: #fff;
 }
 
 // GOGGLE MAP ////////////////////////////////////////////////////////

@@ -1,65 +1,73 @@
-<h2>Share a book</h2>
+<h2>SHARE A BOOK</h2>
 
-{{!-- SEARCH SECTION ////////////////////////////////////////////////////////////////// --}}
-<section class="search-section row">
+<main class="container main-container">
 
-    <div class="col s12 l6 ">
-        <form method="GET" action="/search-book-process">
-            <div class="input-field">
-                <i class="material-icons prefix">text_fields</i>
-                <input id="title-search" type="text" name="title" class="validate">
-                <label for="title-search">Search by title</label>
+    {{!-- SEARCH SECTION ////////////////////////////////////////////////////////////////// --}}
+    <section class="search-section row">
+
+        <div class="col s12 l6 ">
+            <form method="GET" action="/search-book-process">
+                <div class="input-field">
+                    <i class="material-icons prefix">text_fields</i>
+                    <input id="title-search" type="text" name="title" class="validate">
+                    <label for="title-search">Search by title</label>
+                </div>
+                <button class="waves-effect waves-light btn search-btn blue darken-3 right">Find a book by title</button>
+            </form>
+        </div>
+
+        <div class="col s12 l6 ">
+            <form method="GET" action="/search-author-process">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input id="author-search" type="text" name="author" class="validate">
+                    <label for="author-search">Search by author</label>
+                </div>
+                <button class="waves-effect waves-light btn search-btn blue darken-3 right">Find a book by author</button>
+            </form>
+        </div>
+
+    </section>
+
+    {{!-- BOOK LIST SECTION ////////////////////////////////////////////////////////////////// --}}
+    <section class="book-list-section center-align">
+
+        {{#if bookFromApi}}
+            <h4>Choose a book from the list</h4>
+            <div class="row">
+                {{#each bookFromApi}}
+                    {{#if this.hasThumbnail}}
+                            <div class="finded-book-item left center-align col s6 m4 l3 xl2">
+                                <div class="add-form-wrap center-align">
+
+                                    <img src="{{this.thumbnail}}" />   
+                                    <div class="book-item-inner-wrap center-align">
+                                        <h5>{{this.title}}</h5>
+                                        {{#each this.authors}}
+                                            {{#if @first}}
+                                                <p>{{this}}</p>
+                                            {{/if}}
+                                        {{/each}}
+
+                                        <form method="POST" action="/add-book-process">
+                                            <input type="hidden" name="title" value="{{this.title}}" />
+                                            {{#each this.authors}}
+                                                {{#if @first}}
+                                                    <input type="hidden" name="author" value="{{this}}" />
+                                                {{/if}}
+                                            {{/each}}
+                                            <input type="hidden" name="imageUrl" value="{{this.thumbnail}}" />
+                                            <input type="hidden" name="description" value="{{this.description}}" />
+                                            <button class="add-book-btn btn-floating btn-large waves-effect waves-light amber darken-1 pulse"><i class="material-icons">add</i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    {{/if}}
+                {{/each}}
             </div>
-            <button class="waves-effect waves-light btn sign-up-btn blue darken-3 right">Find a book by title</button>
-        </form>
-    </div>
+        {{/if}}
+        <div class="clearBoth"></div>
+    </section>
 
-    <div class="col s12 l6 ">
-        <form method="GET" action="/search-author-process">
-            <div class="input-field">
-                <i class="material-icons prefix">person</i>
-                <input id="author-search" type="text" name="author" class="validate">
-                <label for="author-search">Search by author</label>
-            </div>
-            <button class="waves-effect waves-light btn sign-up-btn blue darken-3 right">Find a book by author</button>
-        </form>
-    </div>
-
-</section>
-
-{{!-- BOOK LIST SECTION ////////////////////////////////////////////////////////////////// --}}
-<section class="book-list-section center-align">
-
-    {{#if bookFromApi}}
-        <h4>Choose a book from the list</h4>
-        <ul>
-            {{#each bookFromApi}}
-                {{#if this.hasThumbnail}}
-                    <li>
-                        <div class="finded-book-item left center-align">
-                            <img src="{{this.thumbnail}}" />
-                            <h5>{{this.title}}</h5>
-                            {{#each this.authors}}
-                                {{#if @first}}
-                                    <p>{{this}}</p>
-                                {{/if}}
-                            {{/each}}
-                            <form method="POST" action="/add-book-process">
-                                <input type="hidden" name="title" value="{{this.title}}" />
-                                {{#each this.authors}}
-                                    {{#if @first}}
-                                        <input type="hidden" name="author" value="{{this}}" />
-                                    {{/if}}
-                                {{/each}}
-                                <input type="hidden" name="imageUrl" value="{{this.thumbnail}}" />
-                                <input type="hidden" name="description" value="{{this.description}}" />
-                                <button>Share</button>
-                            </form>
-                        </div>
-                    </li>
-                {{/if}}
-            {{/each}}
-        </ul>
-    {{/if}}
-    <div class="clearBoth"></div>
-</section>
+</main>

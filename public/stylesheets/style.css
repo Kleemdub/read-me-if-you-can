@@ -1,6 +1,15 @@
 body {
   font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
 
+.rmiyc-logo {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px; }
+
+.navbar-fixed {
+  z-index: 99; }
+
 .nav-wrapper {
   background-color: #1f3c8f;
   padding-left: 20px;
@@ -27,10 +36,33 @@ body {
 .page-footer .footer-copyright p {
   color: #ff7b00; }
 
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: #ff7b00;
+  margin-bottom: 40px;
+  background-color: #091331;
+  font-weight: 300;
+  font-size: 3.5em;
+  letter-spacing: 2px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.37);
+  z-index: 90; }
+
+.index-title {
+  margin-bottom: 0px; }
+
 .col-gauche {
-  background-color: #9b9b9b;
-  height: 300px;
   margin-bottom: 40px; }
+
+.rmify-logo-large {
+  width: auto; }
+
+.smartphone {
+  width: auto;
+  margin-top: 35px; }
 
 .clearBoth {
   clear: both; }
@@ -85,10 +117,41 @@ body {
   box-shadow: 0 1px 0 0 #ffa600; }
 
 .sign-up-section {
-  margin-top: 15px; }
+  margin-top: 0px;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
+  border-radius: 10px;
+  padding: 30px 30px; }
+
+.log-in-section {
+  margin-bottom: 25px;
+  margin-top: 10px; }
+
+.log-in-section p {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.7em;
+  margin: 0;
+  padding: 0;
+  float: left; }
+
+.log-in-section a {
+  color: #1f3c8f;
+  font-weight: 700;
+  font-size: 1.7em;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  float: left; }
+
+.log-in-section a:hover {
+  color: #ffa600; }
 
 .google-login {
   padding-bottom: 15px; }
+
+.google-login a {
+  display: block; }
 
 .google-btn {
   background: #fff;
@@ -96,8 +159,6 @@ body {
   width: 100%;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
   border-radius: 10px;
-  padding: 10px 20px;
-  padding-right: 30px;
   display: block; }
 
 .google-btn:hover {
@@ -110,14 +171,7 @@ body {
 
 .google-image {
   border: none;
-  width: 200px; }
-
-h2 {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  color: #091331;
-  margin-bottom: 40px; }
+  width: auto; }
 
 .search-section .input-field input[type=text]:focus + label {
   color: #1f3c8f; }
@@ -136,12 +190,13 @@ h2 {
   border-bottom: 1px solid #ffa600;
   box-shadow: 0 1px 0 0 #ffa600; }
 
+.search-btn {
+  width: 220px; }
+
 .book-list-section {
   width: 100%;
-  background: #ddd;
   margin-top: 50px;
-  padding-top: 30px;
-  border-top: 1px solid #091331; }
+  padding-top: 30px; }
 
 .book-list-section h4 {
   text-align: center;
@@ -151,26 +206,55 @@ h2 {
   margin-bottom: 40px; }
 
 .finded-book-item {
-  width: 150px;
-  height: 300px; }
+  height: 230px;
+  overflow: hidden; }
 
 .finded-book-item img {
   width: 130px;
   height: 190px; }
 
+.add-form-wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 130px;
+  height: 190px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322); }
+
+.add-form-wrap:hover {
+  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.452); }
+
+.book-item-inner-wrap {
+  position: absolute;
+  width: 110px;
+  height: 170px;
+  top: 10px;
+  top: 200px;
+  left: 10px;
+  background-color: rgba(4, 12, 36, 0.897); }
+
+.add-book-btn {
+  position: absolute;
+  top: -80px;
+  top: 90px;
+  left: 26px; }
+
 .finded-book-item h5 {
   margin: 0;
   padding: 0;
-  font-size: 1.1em;
-  color: #091331;
+  font-size: 1em;
+  color: #fff;
   font-weight: 700;
-  padding-top: 10px; }
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .finded-book-item p {
   margin: 0;
   padding: 0;
   padding-top: 4px;
-  font-size: 1em; }
+  font-size: 0.9em;
+  color: #fff; }
 
 .map {
   width: auto;
