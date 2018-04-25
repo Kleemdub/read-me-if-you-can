@@ -131,17 +131,25 @@ router.get("/google/success", passport.authenticate("google", {
   failureRedirect: "/login",
 }));
 
+
+//route for account page
 router.get("/user-account/:userId", (req, res, next) => {
   if(!req.user) {
     res.redirect('/signup');
     return;
   }
-  res.render('auth/user-account');
+  User.findById(req.params.userId)
+    .populate('caches')
+    .then( (usersFromDb) => {
+      console.log(usersFromDb);
+      res.locals.user = usersFromDb;
+      res.render('auth/user-account');
+    })
+    .catch((err)=>{
+      next(err);
+    });
+
 });
-
-
-
-
 
 
 

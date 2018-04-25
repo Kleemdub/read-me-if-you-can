@@ -26,7 +26,6 @@ function passportSetup(app){
   app.use(passport.session());
 
   app.use((req, res, next) => {
-
     res.locals.blahUser = req.user; 
     next();
   });
