@@ -14,6 +14,10 @@ const cacheSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
         required: true
+    },
+    book: {
+        type: Schema.Types.ObjectId,
+        ref: "Book"
     }
 }, {
     timestamps: true

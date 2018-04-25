@@ -54,13 +54,45 @@ axios.get("/caching/data")
   const cacheList = response.data;
 
   cacheList.forEach((oneCache) => {
-    const [ lat, lng ] = oneCache.location.coordinates;
-    new google.maps.Marker({
-      position: {lat, lng},
-      map: map,
-      title: oneCache.clue,
-      animation: google.maps.Animation.DROP
-    });
+    if(oneCache.book) {
+      // console.log(oneCache.book.title);
+      const [ lat, lng ] = oneCache.location.coordinates;
+      
+      // var contentString = `
+      //   <div id="content"  style="width:100px;height:200px">
+      //     <img style="width:64px;height:95px" src="${oneCache.book.imageUrl}"/>
+      //     <h1 class="firstHeading" style="font-size:14px;line-height:12px">${oneCache.book.title}<h1>
+      //     <p style="font-size:10px;line-height:12px">by ${oneCache.book.author}</p>
+      //     <p style="font-size:12px;line-height:12px">${oneCache.clue}</p>
+      //     <a style="font-size:12px;line-height:12px" href="/book-page/${oneCache.book._id}">More infos about this book</a>
+      //   </div>
+      // `;
+
+      var contentString = `
+        <div id="content">
+          <a style="font-size:12px;line-height:12px" href="/book-page/${oneCache.book._id}">
+            <img src="${oneCache.book.imageUrl}"/>
+          </a>
+        </div>
+      `;
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 200
+      });
+
+      var marker = new google.maps.Marker({
+        position: {lat, lng},
+        map: map,
+        title: oneCache.book.title,
+        animation: google.maps.Animation.DROP
+      });
+
+      marker.addListener('click', function() {
+        // console.log(event.target);
+        infowindow.open(map, marker);
+      });
+    }
   })
 })
 .catch((err)=>{
