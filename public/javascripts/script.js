@@ -58,16 +58,6 @@ axios.get("/caching/data")
       // console.log(oneCache.book.title);
       const [ lat, lng ] = oneCache.location.coordinates;
       
-      // var contentString = `
-      //   <div id="content"  style="width:100px;height:200px">
-      //     <img style="width:64px;height:95px" src="${oneCache.book.imageUrl}"/>
-      //     <h1 class="firstHeading" style="font-size:14px;line-height:12px">${oneCache.book.title}<h1>
-      //     <p style="font-size:10px;line-height:12px">by ${oneCache.book.author}</p>
-      //     <p style="font-size:12px;line-height:12px">${oneCache.clue}</p>
-      //     <a style="font-size:12px;line-height:12px" href="/book-page/${oneCache.book._id}">More infos about this book</a>
-      //   </div>
-      // `;
-
       var contentString = `
         <div id="content">
           <a style="font-size:12px;line-height:12px" href="/book-page/${oneCache.book._id}">

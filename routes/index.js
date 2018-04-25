@@ -37,7 +37,16 @@ router.get('/book-page/:bookId', (req, res, next) => {
     res.redirect('/signup');
     return;
   }
-  res.render('book-page');
+
+  Book.findById(req.params.bookId)
+  .populate('cache')
+  .then((selectedBook) => {
+    res.locals.book = selectedBook;
+    res.render('book-page');
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
 router.get('/book-caching/:bookId', (req, res, next) => {
@@ -72,7 +81,8 @@ router.post('/process-caching/:bookId', (req, res, next) => {
   Cache.create({clue, location, user, book})
   .then((addedCache)=>{
     const cache = addedCache._id;
-    Book.findByIdAndUpdate(book, {cache})
+    status = "cached";
+    Book.findByIdAndUpdate(book, {status, cache})
     .then(() => {
       res.redirect('/');
     })
