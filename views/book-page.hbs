@@ -14,8 +14,27 @@
             <h3>{{book.title}}</h3>
             <h5>By {{book.author}}</h5>
             <p>{{book.description}}</p>
+            <div class="book-desc-border"></div>
 
             <div class="clearBoth"></div>
+
+            <div class="found-btn-wrapper">
+                <i class="left medium material-icons">done</i>
+                <button class="left waves-effect waves-light btn found-btn blue darken-3">I FOUND IT!</button>
+                <div class="found-wrapper">
+                    <form id="found-book-form" method="POST" action="/found-process">
+                        <div class="input-field">
+                            <input placeholder="e.g. RMIYC-1524735927138" id="tracking" type="text" name="tracking" class="validate">
+                            <input type="hidden" id="bookId" name="bookId" value="{{book._id}}">
+                            <label for="tracking">Please enter the book's tracking code</label>
+                        </div>
+                        <button class="waves-effect waves-light btn found-submit-btn blue darken-3">Submit</button>
+                    </form>
+                    <p class="found-error red-text">
+                        {{!-- Sorry, the tracking code is not valid --}}
+                    </p>
+                </div>
+            </div>
 
         </div>
 
@@ -25,13 +44,17 @@
         <div class="col s12 l4 col-gauche">
             
             <section class="book-page-clue">
+                {{!-- <div class="found-btn-wrapper">
+                    <i class="left medium material-icons">done</i>
+                    <button class="left waves-effect waves-light btn found-btn blue darken-3">I FOUND IT!</button>
+                </div> --}}
+                <div class="clearBoth"></div>
                 <h5>Clue</h5>
                 <div>
                     {{!-- <i class="material-icons clue-icon prefix">search</i> --}}
                     <p>{{book.cache.clue}}</p>
                 </div>
-
-                <button class="waves-effect waves-light btn found-btn blue darken-3">I FOUND IT!</button>
+                
             </section>
 
         </div>
@@ -49,4 +72,5 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{mapKey}}"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src='/javascripts/book-page-script.js'></script>
+<script src='/javascripts/book-page-map-script.js'></script>
+<script src='/javascripts/book-page-found-script.js'></script>

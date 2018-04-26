@@ -20,7 +20,8 @@ const bookSchema = new Schema({
     cache: {
         type: Schema.Types.ObjectId,
         ref: "Cache"
-    }
+    },
+    trackingCode: { type: String }
 }, {
     timestamps: true
 });

@@ -1,4 +1,5 @@
 const passport = require('passport');
+const mongoose     = require('mongoose');
 const express  = require('express');
 const bcrypt   = require('bcryptjs'); 
 const User     = require('../models/userModel');
@@ -56,13 +57,14 @@ router.get('/book-page/:bookId', (req, res, next) => {
   });
 });
 
-router.get('/book-caching/:bookId', (req, res, next) => {
+router.get('/book-caching/:bookId/:tracking', (req, res, next) => {
   if(!req.user) {
     res.redirect('/signup');
     return;
   }
   
   res.locals.bookId = req.params.bookId;
+  res.locals.tracking = req.params.tracking;
   res.render('book-caching');
 });
 
@@ -120,6 +122,27 @@ router.get('/caching/book/data/:bookID', (req, res, next)=>{
   .populate('book')
   .then((cacheFromDb) => {
     res.json(cacheFromDb);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
+router.get('/checkFound/:bookID/:tracking', (req, res, next)=>{
+  
+  const bookID = req.params.bookID;
+  var tracking = req.params.tracking;
+  tracking = tracking.toUpperCase();
+
+  Book.findById(bookID)
+  .then((findedBook) => {
+    var trackingOk = findedBook.trackingCode;
+    if(tracking == trackingOk) {
+      res.send(true);
+    }
+    else {
+      res.send(false);
+    }
   })
   .catch((err) => {
     next(err);

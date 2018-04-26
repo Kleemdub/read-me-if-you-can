@@ -269,22 +269,36 @@ h2 {
   margin: 0 auto;
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.322); }
 
+.book-page-infos {
+  position: relative; }
+
 .book-page-infos h3 {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 2.7em;
+  padding-top: 58px; }
 
 .book-page-infos h5 {
   margin: 0;
   padding: 0;
-  padding-top: 10px;
-  padding-bottom: 7px;
+  padding-top: 6px;
+  padding-bottom: 4px;
   color: #868686;
   font-weight: 300;
-  font-size: 1.7em; }
+  font-size: 1.5em; }
 
 .book-page-infos p {
   text-align: justify;
-  padding-bottom: 30px; }
+  overflow: hidden;
+  height: 138px;
+  display: block; }
+
+.book-desc-border {
+  border-bottom: 1px solid #b6b6b6;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  height: 7px; }
 
 .book-infos-row {
   padding: 0; }
@@ -303,16 +317,110 @@ h2 {
 .book-map-row {
   margin-top: 0px; }
 
+.found-btn-wrapper {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 99;
+  width: 295px; }
+
+.found-wrapper {
+  position: absolute;
+  display: block;
+  width: 295px;
+  height: 0px;
+  display: none;
+  top: 50px;
+  left: 0px;
+  box-sizing: border-box;
+  padding: 30px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.329); }
+
+.found-submit-btn {
+  width: 150px; }
+
 .found-btn {
-  width: 85%;
-  height: 50px;
-  margin-top: 30px;
+  width: 250px;
+  height: 40px;
   font-size: 1.6em;
   font-weight: 300;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  float: left; }
+
+.found-btn-wrapper i {
+  color: #fff;
+  font-size: 2.7rem;
+  display: block;
+  float: left;
+  text-align: left;
+  padding: 0;
+  margin-right: 5px;
+  background-color: rgba(31, 61, 143, 0.466);
+  border-radius: 2px;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0px 2px 2px #d4d4d4; }
 
 .book-id {
   display: none; }
+
+.caching-form {
+  margin-top: 50px; }
+
+.book-caching-page p {
+  text-align: center;
+  font-size: 1.8em;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  color: #1f3c8f; }
+
+.book-caching-page .tracking-section {
+  background-color: #ececec;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.288); }
+
+.book-caching-page .tracking-section p {
+  font-weight: 300;
+  color: #868686;
+  padding-bottom: 10px;
+  font-size: 1.3em; }
+
+.book-caching-page .tracking-section h3 {
+  padding-top: 0px;
+  margin: 0px;
+  font-weight: 700; }
+
+.book-caching-page .input-field {
+  margin-top: 30px; }
+
+.book-caching-page .input-field input[type=text]:focus + label {
+  color: #1f3c8f; }
+
+.book-caching-page .input-field .prefix.active {
+  color: #ffa600; }
+
+.book-caching-page .input-field .prefix {
+  color: #a5a5a5; }
+
+.book-caching-page .input-field input[type=text]:focus {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.book-caching-page .input-field input[type=text].valid {
+  border-bottom: 1px solid #ffa600;
+  box-shadow: 0 1px 0 0 #ffa600; }
+
+.location-btn {
+  width: 220px;
+  margin-left: 45px;
+  margin-top: 15px; }
 
 .map {
   width: auto;

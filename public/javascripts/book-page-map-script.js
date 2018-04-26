@@ -56,7 +56,7 @@ axios.get(`/caching/book/data/${recupBookId}`)
   });
 })
 .catch((err)=>{
-  console.log(err)
+  console.log(err);
   alert("Something went wrong !")
 });
 

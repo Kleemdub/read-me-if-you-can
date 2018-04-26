@@ -1,24 +1,37 @@
 <h2>HIDE THIS BOOK!</h2>
 
-<p>Thank you for sharing this book, now let's hide it.</p>
+<main class="container main-container book-caching-page">
 
-<form action="/process-caching/{{bookId}}" method="post">
-  <label>
-    Clue
-    <input type="text" name="clue" placeholder="Your clue">
-  </label>
+  <p>Thank you for sharing this book, now let's hide it.</p>
 
-  <label>
-    Location:
-    <input type="text" placeholder="Address of your hideout" class="location-input" />
-  </label>
+  <div class="tracking-section center-align">
+    <p>To ensure the tracking of this book, please write this code on the cover:</p>
+    <h3>{{tracking}}</h3>
+  </div>
 
-  <input type="hidden" name="latitude" class="lat-input" />
-  <input type="hidden" name="longitude" class="lng-input" />
+  <form class="caching-form" action="/process-caching/{{bookId}}/" method="post">
+   
+    <div class="input-field">
+      <i class="material-icons prefix">info_outline</i>
+      <input placeholder="Your clue" id="clue" type="text" name="clue" class="validate">
+      <label for="clue">Clue</label>
+    </div>
 
-  <button>Add this location</button>
+    <div class="input-field">
+      <i class="material-icons prefix">location_searching</i>
+      <input placeholder="Address of your hideout" id="location-input" type="text" class="validate location-input">
+      <label>Location</label>
+    </div>
 
-</form>
+    <input type="hidden" name="latitude" class="lat-input" />
+    <input type="hidden" name="longitude" class="lng-input" />
+
+    <button class="waves-effect waves-light btn location-btn blue darken-3">Add this location</button>
+    {{!-- <button>Add this location</button> --}}
+
+  </form>
+
+</main>
 
 <div class="map" style="display:none;"></div>
 

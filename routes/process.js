@@ -1,4 +1,5 @@
 const passport = require('passport');
+const mongoose     = require('mongoose');
 const express  = require('express');
 const bcrypt   = require('bcryptjs'); 
 const flash    = require('flash');
@@ -81,13 +82,42 @@ router.post('/add-book-process', (req, res, next) => {
     const status = "pending";
     const user = req.user;
 
-    Book.create({ title, author, imageUrl, description, status, user })
+    const trackingCode = "RMIYC-" + (Date.now());
+    // console.log(trackingCode);
+
+    Book.create({ title, author, imageUrl, description, status, user, trackingCode })
     .then((addedBook) => {
-        res.redirect(`/book-caching/${addedBook._id}`);
+        res.redirect(`/book-caching/${addedBook._id}/${trackingCode}`);
     })
     .catch((err) => {
         next(err);
     });
+});
+
+
+// A BOOK IS FOUND >> UPDATE THE DATABASE ///////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+router.post('/found-process', (req, res, next) => {
+
+    const { tracking, bookId } = req.body;
+    const currentUser = req.user._id;
+    var user = mongoose.Types.ObjectId(currentUser);
+    var status = "found";
+
+    Book.findByIdAndUpdate(bookId, {user, status, $unset: {cache: 1}})
+    .then(() => {
+        return Cache.findOneAndRemove({book:bookId});
+    })
+    .then(() => {
+        res.redirect("/");
+    })
+    .catch((err) => {
+        next(err);
+    });
+
+    // res.redirect("/");
+    
 });
 
 // End Route--------------------------------------------------
