@@ -12,7 +12,8 @@ const userSchema = new Schema({
         enum: ["normal", "admin"],
         default: "normal"
     },
-    googleID: {type: String}
+    googleID: {type: String},
+    score: {type: Number, default: 0}
 }, {
     timestamps: true
 });
