@@ -29,12 +29,10 @@ passport.use(new GoogleStrategy({
         fullName: displayName,
         email: emails[0].value
       })
+      .then((newUser)=>{
+        done(null, newUser);
+      })
     })
-
-    .then((newUser)=>{
-      done(null, newUser);
-    })
-    
     .catch((err)=>{
       done(err);
     });
