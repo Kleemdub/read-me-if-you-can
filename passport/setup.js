@@ -6,7 +6,7 @@ require("./google-strategy");
 
 passport.serializeUser((userDetails, done)=>{
   console.log('serialize (save to session)');
-  done(null, userDetails._id) 
+  done(null, userDetails._id); 
 });
 
 passport.deserializeUser((idFromSession, done)=>{
@@ -16,7 +16,7 @@ passport.deserializeUser((idFromSession, done)=>{
       done(null, userDetails); 
     })
     .catch((err)=>{
-      next(err);
+      done(err);
     });
 });
 
