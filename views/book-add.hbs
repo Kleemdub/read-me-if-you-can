@@ -1,4 +1,4 @@
-<h2>SHARE A BOOK</h2>
+<h2>SHARE <span class="white-text">A BOOK</span></h2>
 
 <main class="container main-container">
 
@@ -6,24 +6,24 @@
     <section class="search-section row">
 
         <div class="col s12 l6 ">
-            <form method="GET" action="/search-book-process">
+            <form class="search-book-form" method="GET" action="/search-book-process">
                 <div class="input-field">
                     <i class="material-icons prefix">text_fields</i>
                     <input id="title-search" type="text" name="title" class="validate">
                     <label for="title-search">Search by title</label>
                 </div>
-                <button class="waves-effect waves-light btn search-btn blue darken-3 right">Find a book by title</button>
+                <button class="waves-effect waves-light btn search-btn light-green accent-4 right">Find a book by title</button>
             </form>
         </div>
 
         <div class="col s12 l6 ">
-            <form method="GET" action="/search-author-process">
+            <form class="search-book-form" method="GET" action="/search-author-process">
                 <div class="input-field">
                     <i class="material-icons prefix">person</i>
                     <input id="author-search" type="text" name="author" class="validate">
                     <label for="author-search">Search by author</label>
                 </div>
-                <button class="waves-effect waves-light btn search-btn blue darken-3 right">Find a book by author</button>
+                <button class="waves-effect waves-light btn search-btn light-green accent-4 right">Find a book by author</button>
             </form>
         </div>
 
@@ -58,7 +58,7 @@
                                             {{/each}}
                                             <input type="hidden" name="imageUrl" value="{{this.thumbnail}}" />
                                             <input type="hidden" name="description" value="{{this.description}}" />
-                                            <button class="add-book-btn btn-floating btn-large waves-effect waves-light amber darken-1 pulse"><i class="material-icons">add</i></button>
+                                            <button class="add-book-btn btn-floating btn-large waves-effect waves-light pink accent-3 pulse"><i class="material-icons">add</i></button>
                                         </form>
                                     </div>
                                 </div>

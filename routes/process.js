@@ -110,6 +110,9 @@ router.post('/found-process', (req, res, next) => {
         return Cache.findOneAndRemove({book:bookId});
     })
     .then(() => {
+        return User.findByIdAndUpdate(user, { $inc: { score: 20 }});
+    })
+    .then(() => {
         res.redirect("/");
     })
     .catch((err) => {

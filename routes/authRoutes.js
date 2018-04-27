@@ -9,15 +9,15 @@ const router     = express.Router();
 const nodemailer =  require('nodemailer');
 
 // Nodemailer
-const transporter =  nodemailer.createTransport({
-  service: "Gmail",
-  auth: {
-    user: process.env.gmail_user,
-    pass: process.env.gmail_pass
-  }  
-});
+// const transporter =  nodemailer.createTransport({
+//   service: "Gmail",
+//   auth: {
+//     user: process.env.gmail_user,
+//     pass: process.env.gmail_pass
+//   }  
+// });
 
-let mailMessage = 
+
 
 
 
@@ -32,53 +32,50 @@ router.get("/signup", (req, res, next) => {
 router.post("/process-signup", (req, res, next) => {
   const { fullName, nickName, email, password, score} = req.body;
 
-  
-
   if(password === "" || password.match(/[0-9]/) === null ){
     res.redirect("/signup");
     return;
   }
-
+  
   const salt = bcrypt.genSaltSync(10); 
   const encryptedPassword = bcrypt.hashSync(password, salt)
 
   User.create({fullName, nickName, email, encryptedPassword, score})
+  .then(()=>{
+    res.redirect("/login");
+  })
+  .catch((err) => {
+    next(err);
+  });
 
-    .then(()=>{
-      res.redirect("/");
-    })
-    .catch((err) => {
-      next(err);
-    });
-
-    transporter.sendMail(
-      
-      {
-        from: "Read Me If You Can <readme.ifyoucan9@gmail.com>",
-        to: email,
-        subject: `Confirmation email`,
-        text: `
-            "Read Me If You Can" Confirmation Email
-            Hello 
-            Thanks to join our community! Please confirm your account by clicking here:
-            http://localhost:3000/auth/confirm/
-            Great to see you on our app 😎
-        `,
-        html: `
-          <h1>"Read Me If You Can" Confirmation Email</h1>
-          <h2>Hello </h2>
-          <p>Thanks to join our community! Please confirm your account by clicking here:</p>
-          <p>http://localhost:3000/auth/confirm/</p>
-          <p>Great to see you on our app 😎</p>
-        `
-      }, 
-            
-      (error, info) => {
-      if (error) {
-          return console.log(error);
-      }
-      console.log("mail envoyé");
-    })
+  // transporter.sendMail(
+    
+  //   {
+  //     from: "Read Me If You Can <readme.ifyoucan9@gmail.com>",
+  //     to: email,
+  //     subject: `Confirmation email`,
+  //     text: `
+  //         "Read Me If You Can" Confirmation Email
+  //         Hello 
+  //         Thanks to join our community! Please confirm your account by clicking here:
+  //         http://localhost:3000/auth/confirm/
+  //         Great to see you on our app 😎
+  //     `,
+  //     html: `
+  //       <h1>"Read Me If You Can" Confirmation Email</h1>
+  //       <h2>Hello </h2>
+  //       <p>Thanks to join our community! Please confirm your account by clicking here:</p>
+  //       <p>http://localhost:3000/auth/confirm/</p>
+  //       <p>Great to see you on our app 😎</p>
+  //     `
+  //   }, 
+          
+  //   (error, info) => {
+  //   if (error) {
+  //       return console.log(error);
+  //   }
+  //   console.log("mail envoyé");
+  // })
 
 });
 

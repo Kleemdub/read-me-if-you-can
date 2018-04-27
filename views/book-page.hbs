@@ -1,4 +1,4 @@
-<h2>BOOK CARD</h2>
+<h2>BOOK <span class="white-text">CARD</span></h2>
 
 <p class="book-id">{{book._id}}</p>
 
@@ -20,7 +20,7 @@
 
             <div class="found-btn-wrapper">
                 <i class="left medium material-icons">done</i>
-                <button class="left waves-effect waves-light btn found-btn blue darken-3">I FOUND IT!</button>
+                <button class="left waves-effect waves-light btn found-btn light-green accent-4">I FOUND IT!</button>
                 <div class="found-wrapper">
                     <form id="found-book-form" method="POST" action="/found-process">
                         <div class="input-field">
@@ -28,7 +28,7 @@
                             <input type="hidden" id="bookId" name="bookId" value="{{book._id}}">
                             <label for="tracking">Please enter the book's tracking code</label>
                         </div>
-                        <button class="waves-effect waves-light btn found-submit-btn blue darken-3">Submit</button>
+                        <button class="waves-effect waves-light btn found-submit-btn pink accent-3">Submit</button>
                     </form>
                     <p class="found-error red-text">
                         {{!-- Sorry, the tracking code is not valid --}}

@@ -1,5 +1,7 @@
 body {
-  font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif; }
+  font: 14px "Roboto Condensed", Helvetica, Arial, sans-serif;
+  background: url("../images/bg-rayure-3.jpg");
+  background-repeat: repeat; }
 
 .rmiyc-logo {
   border: none;
@@ -11,7 +13,7 @@ body {
   z-index: 99; }
 
 .nav-wrapper {
-  background-color: #1f3c8f;
+  background-color: #6dc02f;
   padding-left: 20px;
   padding-right: 20px; }
 
@@ -32,28 +34,31 @@ body {
   padding-right: 0; }
 
 .page-footer {
-  background-color: #091331; }
+  background-color: #8f0032;
+  border-top: 1px solid #b80040;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.589); }
 
 .page-footer .footer-copyright {
-  background-color: #020818; }
+  background-color: #000; }
 
 .page-footer .footer-copyright p {
-  color: #ff7b00; }
+  color: #f50057; }
 
 h2 {
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #ff7b00;
+  color: #6dc02f;
   margin-bottom: 40px;
-  background-color: #091331;
+  background-color: #000;
   font-weight: 300;
   font-size: 3.5em;
   letter-spacing: 2px;
   padding-top: 30px;
   padding-bottom: 30px;
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.37);
-  z-index: 90; }
+  z-index: 90;
+  border-bottom: 1px solid #181818; }
 
 .index-title {
   margin-bottom: 0px; }
@@ -65,14 +70,13 @@ h2 {
   width: auto; }
 
 .smartphone {
-  width: auto;
-  margin-top: 35px; }
+  width: auto; }
 
 .clearBoth {
   clear: both; }
 
 .row h4 {
-  color: #1f3c8f;
+  color: #6dc02f;
   padding: 0;
   margin: 0;
   margin-bottom: 30px;
@@ -82,54 +86,62 @@ h2 {
   width: 150px; }
 
 .row .input-field input[type=text]:focus + label {
-  color: #1f3c8f; }
+  color: #6dc02f; }
 
 .row .input-field .prefix.active {
-  color: #ffa600; }
+  color: #f50057; }
 
 .row .input-field .prefix {
   color: #a5a5a5; }
 
 .row .input-field input[type=text]:focus {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .row .input-field input[type=text].valid {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .row .input-field input[type=email]:focus + label {
-  color: #1f3c8f; }
+  color: #6dc02f; }
 
 .row .input-field input[type=email]:focus {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .row .input-field input[type=email].valid {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .row .input-field input[type=password]:focus + label {
-  color: #1f3c8f; }
+  color: #6dc02f; }
 
 .row .input-field input[type=password]:focus {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .row .input-field input[type=password].valid {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .sign-up-section {
   margin-top: 0px;
   background: #fff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
   border-radius: 10px;
-  padding: 30px 30px; }
+  padding: 30px 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0px 5px 26px rgba(0, 0, 0, 0.8); }
 
 .log-in-section {
   margin-bottom: 25px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px; }
+
+.margin-center {
+  margin: 0 auto; }
 
 .log-in-section p {
   color: #fff;
@@ -137,62 +149,83 @@ h2 {
   font-size: 1.7em;
   margin: 0;
   padding: 0;
-  float: left; }
+  float: left;
+  letter-spacing: 1px; }
 
 .log-in-section a {
-  color: #1f3c8f;
+  color: #6dc02f;
   font-weight: 700;
   font-size: 1.7em;
   margin: 0;
   padding: 0;
   padding-left: 10px;
-  float: left; }
+  float: right;
+  letter-spacing: 3px; }
 
 .log-in-section a:hover {
-  color: #ffa600; }
+  color: #f50057; }
 
 .google-login {
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  margin-left: 30px;
+  margin-right: 30px; }
 
 .google-login a {
   display: block; }
 
 .google-btn {
-  background: #fff;
+  background: none;
   border: none;
   width: 100%;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322);
-  border-radius: 10px;
+  padding: 0;
+  margin: 0;
   display: block; }
 
-.google-btn:hover {
-  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.322); }
+.google-link {
+  padding: 0;
+  margin: 0; }
 
 .google-btn p {
   font-size: 1.2em;
   padding-left: 10px;
-  color: #1f3c8f; }
+  color: #6dc02f; }
 
 .google-image {
   border: none;
-  width: auto; }
+  width: auto;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid #c4c4c4;
+  filter: drop-shadow(0px 2px 7px rgba(0, 0, 0, 0.7)); }
+
+.google-image:hover {
+  filter: drop-shadow(0px 6px 14px rgba(0, 0, 0, 0.9)); }
+
+.search-section .search-book-form {
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .search-section .input-field input[type=text]:focus + label {
-  color: #1f3c8f; }
+  color: #6dc02f; }
+
+.search-section .input-field input[type=text]:focus {
+  color: #fff; }
 
 .search-section .input-field .prefix.active {
-  color: #ffa600; }
+  color: #f50057; }
 
 .search-section .input-field .prefix {
   color: #a5a5a5; }
 
 .search-section .input-field input[type=text]:focus {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .search-section .input-field input[type=text].valid {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .search-btn {
   width: 220px; }
@@ -206,8 +239,9 @@ h2 {
   text-align: center;
   margin: 0;
   padding: 0;
-  color: #091331;
-  margin-bottom: 40px; }
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: 300; }
 
 .finded-book-item {
   height: 230px;
@@ -223,10 +257,10 @@ h2 {
   overflow: hidden;
   width: 130px;
   height: 190px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.322); }
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.7); }
 
 .add-form-wrap:hover {
-  box-shadow: 0px 8px 23px rgba(0, 0, 0, 0.452); }
+  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.9); }
 
 .book-item-inner-wrap {
   position: absolute;
@@ -235,7 +269,7 @@ h2 {
   top: 10px;
   top: 200px;
   left: 10px;
-  background-color: rgba(4, 12, 36, 0.897); }
+  background-color: rgba(31, 31, 31, 0.897); }
 
 .add-book-btn {
   position: absolute;
@@ -267,7 +301,7 @@ h2 {
   width: 204px;
   height: 304px;
   margin: 0 auto;
-  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.322); }
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.8); }
 
 .book-page-infos {
   position: relative; }
@@ -276,7 +310,8 @@ h2 {
   margin: 0;
   padding: 0;
   font-size: 2.7em;
-  padding-top: 58px; }
+  padding-top: 58px;
+  color: #fff; }
 
 .book-page-infos h5 {
   margin: 0;
@@ -291,10 +326,11 @@ h2 {
   text-align: justify;
   overflow: hidden;
   height: 138px;
-  display: block; }
+  display: block;
+  color: #fff; }
 
 .book-desc-border {
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #505050;
   width: auto;
   margin: 0;
   padding: 0;
@@ -304,15 +340,17 @@ h2 {
   padding: 0; }
 
 .book-page-clue h5 {
-  margin-top: 0; }
+  margin-top: 0;
+  color: #fff; }
 
 .book-page-clue p {
   border: none;
   padding: 0;
-  border-left: 6px solid rgba(31, 61, 143, 0.466);
+  border-left: 6px solid #8f0032;
   padding-left: 20px;
   font-style: italic;
-  padding-right: 70px; }
+  padding-right: 70px;
+  color: #868686; }
 
 .book-map-row {
   margin-top: 0px; }
@@ -321,7 +359,7 @@ h2 {
   position: absolute;
   top: 0px;
   right: 0px;
-  z-index: 99;
+  z-index: 59;
   width: 295px; }
 
 .found-wrapper {
@@ -336,7 +374,7 @@ h2 {
   padding: 30px;
   background: #fff;
   overflow: hidden;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.329); }
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.8); }
 
 .found-submit-btn {
   width: 150px; }
@@ -357,11 +395,11 @@ h2 {
   text-align: left;
   padding: 0;
   margin-right: 5px;
-  background-color: rgba(31, 61, 143, 0.466);
+  background-color: #6b6b6b;
   border-radius: 2px;
   height: 40px;
   width: 40px;
-  box-shadow: 0px 2px 2px #d4d4d4; }
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.562); }
 
 .book-id {
   display: none; }
@@ -375,10 +413,10 @@ h2 {
   padding: 0;
   margin: 0;
   font-weight: 700;
-  color: #1f3c8f; }
+  color: #6dc02f; }
 
 .book-caching-page .tracking-section {
-  background-color: #ececec;
+  background-color: white;
   width: 70%;
   margin: 0 auto;
   padding: 15px;
@@ -401,26 +439,68 @@ h2 {
   margin-top: 30px; }
 
 .book-caching-page .input-field input[type=text]:focus + label {
-  color: #1f3c8f; }
+  color: #6dc02f; }
+
+.book-caching-page .input-field input[type=text]:focus {
+  color: #fff; }
 
 .book-caching-page .input-field .prefix.active {
-  color: #ffa600; }
+  color: #f50057; }
 
 .book-caching-page .input-field .prefix {
   color: #a5a5a5; }
 
 .book-caching-page .input-field input[type=text]:focus {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .book-caching-page .input-field input[type=text].valid {
-  border-bottom: 1px solid #ffa600;
-  box-shadow: 0 1px 0 0 #ffa600; }
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
 
 .location-btn {
   width: 220px;
   margin-left: 45px;
   margin-top: 15px; }
+
+.login-page-form .input-field input[type=text]:focus + label {
+  color: #6dc02f; }
+
+.login-page-form .input-field input[type=text]:focus {
+  color: #fff; }
+
+.login-page-form .input-field input[type=password]:focus + label {
+  color: #6dc02f; }
+
+.login-page-form .input-field input[type=password]:focus {
+  color: #fff; }
+
+.login-page-form .input-field .prefix.active {
+  color: #f50057; }
+
+.login-page-form .input-field .prefix {
+  color: #a5a5a5; }
+
+.login-page-form .input-field input[type=text]:focus {
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
+
+.login-page-form .input-field input[type=text].valid {
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
+
+.login-page-form .input-field input[type=password]:focus {
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
+
+.login-page-form .input-field input[type=password].valid {
+  border-bottom: 1px solid #f50057;
+  box-shadow: 0 1px 0 0 #f50057; }
+
+.login-btn {
+  width: 150px;
+  margin-left: 45px;
+  margin-top: 20px; }
 
 .map {
   width: auto;
@@ -429,7 +509,7 @@ h2 {
 .book-page-infos .map {
   width: auto;
   height: 350px;
-  box-shadow: 0px 4px 16px #9b9b9b;
+  box-shadow: 0px 4px 16px black;
   margin-top: 0px; }
 
 /*# sourceMappingURL=style.css.map */

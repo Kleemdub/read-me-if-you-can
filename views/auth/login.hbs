@@ -1,16 +1,25 @@
-<h2>LOG IN</h2>
+<h2>LOG <span class="white-text">IN</span></h2>
 
-<form id="form" action="/process-login" method="post">
-  <label for="">
-    Email
-    <input type="text" name="email" placeholder="e.g. blah@gmail.com">
-  </label>
+<main class="container main-container login-page-form">
 
-  <label for="">
-    Password
-    <input type="password" name="password" placeholder="**********">
-  </label>
+  <form id="form" action="/process-login" method="post">
 
-  <button>Log in</button>
+    <div class="input-field">
+      <i class="material-icons prefix">mail</i>
+      <input id="email" type="text" name="email" class="validate">
+      <label for="email">Email</label>
+    </div>
 
-</form>
+    <div class="input-field">
+      <i class="material-icons prefix">lock</i>
+      <input id="password" type="password" name="password" class="validate">
+      <label for="password">Password</label>
+    </div>
+
+    <button class="waves-effect waves-light btn login-btn light-green accent-4">Log in</button>
+
+    
+
+  </form>
+
+</main>

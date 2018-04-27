@@ -84,7 +84,7 @@ router.post('/process-caching/:bookId', (req, res, next) => {
   };
 
   const user = req.user._id;
-  console.log(req.user.score);
+  // console.log(req.user.score);
 
   const book = req.params.bookId;
 
@@ -92,22 +92,21 @@ router.post('/process-caching/:bookId', (req, res, next) => {
   .then((addedCache)=>{
     const cache = addedCache._id;
     status = "cached";
-    
-    // return 
-    Book.findByIdAndUpdate(book, {status, cache})
-    // .then(()=>{
-    //   User.findByIdAndUpdate((user)=>{score})
-    // })
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch((err) => {
-      next(err);
-    });
+    return cache;
+  })
+  .then((cache) => {
+    return Book.findByIdAndUpdate(book, {status, cache});
+  })
+  .then(() => {
+    return User.findByIdAndUpdate(user, { $inc: { score: 10 }});
+  })
+  .then(() => {
+    res.redirect('/');
   })
   .catch((err)=>{
     next(err);
   })
+    
 });
 
 
