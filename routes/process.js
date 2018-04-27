@@ -113,7 +113,7 @@ router.post('/found-process', (req, res, next) => {
         return User.findByIdAndUpdate(user, { $inc: { score: 20 }});
     })
     .then(() => {
-        res.redirect("/");
+        res.redirect(`/found-this-book/${bookId}/${currentUser}`);
     })
     .catch((err) => {
         next(err);

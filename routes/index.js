@@ -172,6 +172,10 @@ router.get('/checkFound/:bookID/:tracking', (req, res, next)=>{
   });
 });
 
+router.get('/found-this-book/:bookId/:userId', (req, res, next) => {
+  res.render('found-this-book');
+});
+
 
 
 module.exports = router;

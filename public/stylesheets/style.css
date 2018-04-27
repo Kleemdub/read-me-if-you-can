@@ -146,7 +146,7 @@ h2 {
 .log-in-section p {
   color: #fff;
   font-weight: 300;
-  font-size: 1.7em;
+  font-size: 1.6em;
   margin: 0;
   padding: 0;
   float: left;
@@ -155,12 +155,12 @@ h2 {
 .log-in-section a {
   color: #6dc02f;
   font-weight: 700;
-  font-size: 1.7em;
+  font-size: 1.6em;
   margin: 0;
   padding: 0;
   padding-left: 10px;
   float: right;
-  letter-spacing: 3px; }
+  letter-spacing: 1px; }
 
 .log-in-section a:hover {
   color: #f50057; }
@@ -209,6 +209,9 @@ h2 {
 
 .search-section .input-field input[type=text]:focus + label {
   color: #6dc02f; }
+
+.search-section .input-field input[type=text] {
+  color: #fff; }
 
 .search-section .input-field input[type=text]:focus {
   color: #fff; }
@@ -444,6 +447,9 @@ h2 {
 .book-caching-page .input-field input[type=text]:focus {
   color: #fff; }
 
+.book-caching-page .input-field input[type=text] {
+  color: #fff; }
+
 .book-caching-page .input-field .prefix.active {
   color: #f50057; }
 
@@ -469,10 +475,16 @@ h2 {
 .login-page-form .input-field input[type=text]:focus {
   color: #fff; }
 
+.login-page-form .input-field input[type=text] {
+  color: #fff; }
+
 .login-page-form .input-field input[type=password]:focus + label {
   color: #6dc02f; }
 
 .login-page-form .input-field input[type=password]:focus {
+  color: #fff; }
+
+.login-page-form .input-field input[type=password] {
   color: #fff; }
 
 .login-page-form .input-field .prefix.active {
@@ -513,7 +525,10 @@ h2 {
   margin-top: 0px; }
 
 .logout-btn {
-  color: #F65454; }
+  color: #f50057; }
+
+.logout-btn:hover {
+  color: #fff; }
 
 .user-account-row h3 {
   margin: 0;
@@ -593,5 +608,39 @@ h2 {
   font-size: 1.6em;
   font-weight: 700;
   padding-left: 10px; }
+
+.congrats-page h3 {
+  margin: 0;
+  color: #fff; }
+
+.congrats-page p {
+  margin: 0;
+  color: #f50057;
+  font-size: 3em;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.congrats-page a {
+  margin: 0;
+  color: #6dc02f;
+  font-size: 1.4em;
+  display: block;
+  height: 50px;
+  width: 220px;
+  margin: 0 auto;
+  text-align: center; }
+
+.congrats-page a:hover {
+  color: #f50057; }
+
+.score {
+  background: #fff;
+  color: #6dc02f;
+  border-radius: 20px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-left: 12px;
+  letter-spacing: 0px;
+  font-weight: 400; }
 
 /*# sourceMappingURL=style.css.map */
