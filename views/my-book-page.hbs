@@ -1,0 +1,40 @@
+<h2>MY <span class="white-text">BOOK</span></h2>
+
+<p class="book-id">{{book._id}}</p>
+
+<main class="container main-container">
+
+    <div class="row book-infos-row">
+        
+        <div class="col s12 l4 col-gauche">
+            <img class="book-page-image" src="{{book.imageUrl}}" />
+        </div>
+
+        <div class="col s12 l8 col-droite my-book-page-infos">
+            <div class="links-my-book">
+                <a class="left" href="/user-account/{{userId}}"><< All my books</a>
+                <a class="hide-book-link right" href="/book-caching/{{book._id}}/{{book.trackingCode}}">HIDE THIS BOOK!</a>
+                <i class="material-icons prefix right white-text hide-book-icon">location_searching</i>
+            </div>
+            <h3>{{book.title}}</h3>
+            <h5>By {{book.author}}</h5>
+            <p>{{book.description}}</p>
+            <div class="book-desc-border"></div>
+
+            <div class="clearBoth"></div>
+
+            <div class="tracking-section center-align">
+                <p>Tracking code: <span class="tracking-code-text">{{book.trackingCode}}</span></p>
+            </div>
+            
+
+        </div>
+
+    </div>
+
+    
+
+
+</main>
+
+{{!-- <script src='/javascripts/book-page-found-script.js'></script> --}}

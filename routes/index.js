@@ -57,6 +57,24 @@ router.get('/book-page/:bookId', (req, res, next) => {
   });
 });
 
+router.get('/my-book-page/:bookId', (req, res, next) => {
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
+
+  Book.findById(req.params.bookId)
+  .populate('cache')
+  .then((selectedBook) => {
+    res.locals.userId = req.user._id;
+    res.locals.book = selectedBook;
+    res.render('my-book-page');
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 router.get('/book-caching/:bookId/:tracking', (req, res, next) => {
   if(!req.user) {
     res.redirect('/signup');

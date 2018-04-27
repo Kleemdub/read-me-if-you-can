@@ -144,12 +144,23 @@ router.get("/user-account/:userId", (req, res, next) => {
   User.findById(req.params.userId)
     .then( (usersFromDb) => {
       // console.log(usersFromDb)
+      usersFromDb.capName = usersFromDb.fullName.toUpperCase();
       res.locals.user = usersFromDb;
 
       Promise.all([   Book.find({user:usersFromDb._id})
         .then( (booksFromDb)=>{
+          booksFromDb.forEach((oneBook) => {
+            if(oneBook.status == "found"){
+              oneBook.found = true;
+            }
+            else if(oneBook.status == "cached") {
+              oneBook.cached = true;
+            }
+          });
+          
+
           res.locals.myBook = booksFromDb;
-          console.log(res.locals.myBook);
+          // console.log(res.locals.myBook);
         })
         .catch((err) => {
           next(err);
@@ -158,7 +169,7 @@ router.get("/user-account/:userId", (req, res, next) => {
         Cache.find({user:usersFromDb._id})
         .then( (cacheFromDb) => {
           res.locals.myCache = cacheFromDb;
-          console.log(res.locals.myCache);
+          // console.log(res.locals.myCache);
 
         })
         .catch((err) => {
