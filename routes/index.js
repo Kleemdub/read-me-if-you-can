@@ -91,7 +91,7 @@ router.get('/dashboard', (req, res, next) =>{
     res.redirect('/signup');
     return;
   }
-  User.find().sort({ "score": -1 }).limit(10)
+  User.find().sort({ "score": -1 }).limit(20)
     .then((user)=>{
       var pos = 1;
       user.forEach((oneUser) => {
