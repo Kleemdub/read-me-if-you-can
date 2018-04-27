@@ -34,8 +34,12 @@
                 <li><a href="/books-list">Books List</a></li>
                 <li><a href="/book-add">Share a book</a></li>
                 {{!-- <li><a href="/book-page">Book Page</a></li> --}}
-                <li><a href="/user-account/{{blahUser._id}}">My account</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/user-account/{{blahUser._id}}">{{blahUser.nickname}} - Score: <span class="score">{{blahUser.score}}</span></a></li>
+                <li><a href="/logout"> <i class="material-icons logout-btn">power_settings_new</i></a></li>
+
+
+
+
 
               {{else}}
                   <li><a href="/signup">Sign up now</a>
@@ -57,8 +61,8 @@
           <li><a href="/books-list">Books List</a></li>
           <li><a href="/book-add">Share a book</a></li>
           {{!-- <li><a href="/book-page">Book Page</a></li> --}}
-          <li><a href="/user-account/{{blahUser._id}}">My account</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><a href="/user-account/{{blahUser._id}}">{{blahUser.nickname}} - Score: {{blahUser.score}}</a></li>
+          <li><a href="/logout"> <i class="material-icons logout-btn">power_settings_new</i></a></li>
 
         {{else}}
             <li><a href="/signup">Sign up now</a>
