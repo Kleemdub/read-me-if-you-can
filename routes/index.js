@@ -68,6 +68,23 @@ router.get('/book-caching/:bookId/:tracking', (req, res, next) => {
   res.render('book-caching');
 });
 
+router.get('/dashboard', (req, res, next) =>{
+  if(!req.user) {
+    res.redirect('/signup');
+    return;
+  }
+  User.find().sort({ "score": -1 }).limit(10)
+    .then((user)=>{
+      res.locals.allUser = user;
+      res.render('dashboard');
+    })
+    .catch((err)=>{
+      next(err);
+    })
+});
+
+
+
 
 // BOOK CACHING - GOOGLE MAPS ///////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
