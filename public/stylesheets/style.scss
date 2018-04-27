@@ -708,3 +708,100 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.562);
   color: #F65454;
 }
 
+.user-account-row h3 {
+  margin:0;
+  text-align:center;
+  font-weight:300;
+  margin-bottom:40px;
+  color: #fff;
+  font-size:2em;
+  border-bottom: 1px solid rgb(80, 80, 80);
+  padding-bottom:15px;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.my-book-page-infos {
+  position: relative;
+}
+
+.my-book-page-infos a {
+  color: #6dc02f;
+  font-size:1.5em;
+  letter-spacing: 1px;
+}
+
+.my-book-page-infos a:hover {
+  color: #f50057;
+}
+
+.links-my-book .hide-book-link {
+  font-size:2em;
+  letter-spacing: 1px;
+}
+
+.links-my-book .hide-book-icon {
+  padding-top:4px;
+  padding-right:6px;
+}
+
+.my-book-page-infos h3 {
+  margin:0;
+  padding:0;
+  // width:320px;
+  // width:50%;
+  // background: #ddd;
+  font-size:2.7em;
+  padding-top:48px;
+  color:#fff;
+}
+
+.my-book-page-infos h5 {
+  margin:0;
+  padding:0;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  color:rgb(134, 134, 134);
+  font-weight: 300;
+  font-size:1.5em;
+}
+
+.my-book-page-infos p {
+  text-align: justify;
+  // border-bottom: 1px solid rgb(182, 182, 182);
+  // padding-bottom:30px;
+  // background-color: #ccc;
+  overflow: hidden;
+  height:138px;
+  display: block;
+  color:#fff;
+}
+
+.my-book-page-infos .tracking-section {
+  background-color: rgb(255, 255, 255);
+  width:100%;
+  margin:0 auto;
+  padding:15px;
+  margin-top:35px;
+  // margin-bottom:30px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.76);
+  height:75px;
+}
+
+.my-book-page-infos .tracking-section p {
+  font-weight: 300;
+  color:rgb(134, 134, 134);
+  padding-bottom:0px;
+  font-size: 1.6em;
+  margin:0;
+  height:50px;
+  text-align: center;
+}
+
+.tracking-code-text {
+  color:#000;
+  font-size:1.6em;
+  font-weight:700;
+  padding-left:10px;
+}
