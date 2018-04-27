@@ -1,0 +1,46 @@
+<h2>MY <span class="white-text">BOOK</span></h2>
+
+<p class="book-id">{{book._id}}</p>
+
+<main class="container main-container">
+
+    <div class="row book-infos-row">
+        
+        <div class="col s12 l4 col-gauche">
+            <img class="book-page-image" src="{{book.imageUrl}}" />
+        </div>
+
+        <div class="col s12 l8 col-droite book-page-infos">
+            <a href="/user-account/{{userId}}"><< All my books</a>
+            <h3>{{book.title}}</h3>
+            <h5>By {{book.author}}</h5>
+            <p>{{book.description}}</p>
+            <div class="book-desc-border"></div>
+
+            <div class="clearBoth"></div>
+
+            
+
+        </div>
+
+    </div>
+
+    <div class="row book-map-row">
+        <div class="col s12 l4 col-gauche">
+            
+            
+
+        </div>
+
+        <div class="col s12 l8 col-droite book-page-infos">
+
+            
+        </div>
+
+
+    </div>
+
+
+</main>
+
+{{!-- <script src='/javascripts/book-page-found-script.js'></script> --}}
