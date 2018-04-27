@@ -30,7 +30,7 @@ router.get("/signup", (req, res, next) => {
 
 
 router.post("/process-signup", (req, res, next) => {
-  const { fullName, nickName, email, password, score} = req.body;
+  const { fullName, nickname, email, password, score} = req.body;
 
   if(password === "" || password.match(/[0-9]/) === null ){
     res.redirect("/signup");
@@ -40,7 +40,7 @@ router.post("/process-signup", (req, res, next) => {
   const salt = bcrypt.genSaltSync(10); 
   const encryptedPassword = bcrypt.hashSync(password, salt)
 
-  User.create({fullName, nickName, email, encryptedPassword, score})
+  User.create({fullName, nickname, email, encryptedPassword, score})
   .then(()=>{
     res.redirect("/login");
   })
