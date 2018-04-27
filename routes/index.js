@@ -93,6 +93,11 @@ router.get('/dashboard', (req, res, next) =>{
   }
   User.find().sort({ "score": -1 }).limit(10)
     .then((user)=>{
+      var pos = 1;
+      user.forEach((oneUser) => {
+        oneUser.position = pos;
+        pos++;
+      });
       res.locals.allUser = user;
       res.render('dashboard');
     })

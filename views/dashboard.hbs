@@ -4,16 +4,25 @@
 <main class="container main-container center-align">  
   <div class="row">
     {{#each allUser }}
+    
       <div class="dashboard">
+
+        <div class="pos-score">
+          <h5>{{this.position}}</h5>
+        </div>
+
         <div class="name-score">
           <h5>{{this.nickname}}</h5>
         </div>
+
         <div class="dashboard-score">
           <h5>{{this.score}}</h5>
         </div>
-      </div>  
+
+      </div> 
+      <div class="clearBoth"></div> 
     {{/each}}
-      <div class="clearBoth"></div>
+      
   </div>
 </main>
 

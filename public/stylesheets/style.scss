@@ -827,28 +827,47 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.562);
   padding-left:10px;
 }
 
+.dashboard {
+  margin-bottom:15px;
+  margin-top:15px;
+}
+
+.pos-score {
+  float: left;
+  width: 10%;
+  height: 50px;
+  color: rgb(245, 240, 240);
+  border-bottom: solid 1px gray;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding-bottom:8px;
+}
 
 .name-score {
   float: left;
   width: 80%;
   height: 50px;
   color: rgb(245, 240, 240);
-  border-bottom: solid 2px gray;
+  border-bottom: solid 1px gray;
   font-size: 1.3em;
   letter-spacing: 1px;
   font-weight: 300;
+  padding-bottom:8px;
 }
 
 .dashboard-score {
   float: right;
-  width: 50px;
+  width: 10%;
   height: 50px;
-  color: white;
-  border-radius: 50%;
-  background-color: #7fc24c;
+  color: #7fc24c;
+  // border-radius: 50%;
+  // background-color: #7fc24c;
+  border-bottom: solid 1px gray;
   font-size: 1.3em;
   letter-spacing: 1px;
   font-weight: 300;
+  padding-bottom:8px;
 }
 
 
@@ -901,3 +920,4 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.562);
   margin-left:12px;
   letter-spacing: 0px;
   font-weight: 400;
+}
