@@ -512,4 +512,11 @@ h2 {
   box-shadow: 0px 4px 16px black;
   margin-top: 0px; }
 
+.logout-btn {
+  color: #F65454; }
+
+.score {
+  color: red;
+  border-style: dashed; }
+
 /*# sourceMappingURL=style.css.map */
